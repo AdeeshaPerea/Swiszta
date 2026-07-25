@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import HeroSlider from './components/HeroSlider';
 import ServicesBar from './components/ServicesBar';
@@ -20,6 +19,7 @@ import ServicesPage from './pages/ServicesPage';
 import SolutionsPage from './pages/SolutionsPage';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
+import WhatsNewPage from './pages/WhatsNewPage';
 
 export default function App() {
   const [activePage, setActivePage] = useState('home');
@@ -29,15 +29,20 @@ export default function App() {
   const [selectedService, setSelectedService] = useState(null);
 
   const handleNavigate = (page) => {
-    setActivePage(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (page === 'about') {
+      setActivePage('home');
+      setTimeout(() => {
+        const el = document.getElementById('about');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+    } else {
+      setActivePage(page);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
     <div className="app-root">
-      {/* Header Top Bar */}
-      <TopBar onNavigate={handleNavigate} />
-
       {/* Navigation Header */}
       <Navbar 
         activePage={activePage} 
@@ -58,17 +63,14 @@ export default function App() {
             />
             <AboutSection 
               onNavigate={handleNavigate} 
-              onOpenVideo={() => setIsVideoOpen(true)} 
+              onOpenVideo={() => setIsVideoOpen(true)}
+              onOpenQuote={() => setIsQuoteOpen(true)}
             />
             <StatsAndClients 
               onOpenClientsModal={() => setIsClientsOpen(true)} 
             />
             <TestimonialQuote />
           </>
-        )}
-
-        {activePage === 'about' && (
-          <AboutPage onOpenQuote={() => setIsQuoteOpen(true)} />
         )}
 
         {activePage === 'services' && (
@@ -91,6 +93,10 @@ export default function App() {
 
         {activePage === 'careers' && (
           <CareersPage />
+        )}
+
+        {activePage === 'whatsnew' && (
+          <WhatsNewPage />
         )}
 
         {activePage === 'contact' && (

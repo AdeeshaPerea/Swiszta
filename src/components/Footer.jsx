@@ -1,26 +1,15 @@
-import React, { useState } from 'react';
-import { ChevronRight, Phone, Mail, MapPin } from 'lucide-react';
+import React from 'react';
+import { Phone, Mail, Globe } from 'lucide-react';
 
-export default function Footer({ onNavigate, onOpenQuote }) {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail('');
-      setTimeout(() => setSubscribed(false), 4000);
-    }
-  };
-
+export default function Footer({ onNavigate }) {
   return (
     <footer className="main-footer">
       <div className="container">
-        <div className="footer-grid">
-          {/* Brand Info */}
-          <div className="footer-brand">
-            <div className="logo" onClick={() => onNavigate('home')}>
+        <div className="footer-columns-grid">
+          
+          {/* Column 1: SWISZTA Logo & Description */}
+          <div className="footer-col">
+            <div className="logo" onClick={() => onNavigate('home')} style={{ cursor: 'pointer', marginBottom: '16px' }}>
               <div className="logo-grid">
                 <div className="logo-sq"></div>
                 <div className="logo-sq"></div>
@@ -28,91 +17,226 @@ export default function Footer({ onNavigate, onOpenQuote }) {
                 <div className="logo-sq"></div>
               </div>
               <div className="logo-text">
-                <span className="logo-brand">SWISZTA</span>
-                <span className="logo-tagline" style={{ color: '#A0AEC0' }}>HOTEL & HOSPITALITY SERVICES</span>
+                <span className="logo-brand" style={{ color: '#FFFFFF' }}>SWISZTA</span>
+                <span className="logo-tagline" style={{ color: '#C8102E' }}>HOTEL & HOSPITALITY SERVICES</span>
               </div>
             </div>
-            <p>
-              SWISZTA provides premier integrated hospitality solutions across Australia and internationally, ensuring exceptional operational standards and unforgettable guest experiences.
+            <p style={{ fontSize: '0.82rem', color: '#A0AEC0', lineHeight: 1.5 }}>
+              Delivering excellence in hotel & hospitality services across Australia and New Zealand.
             </p>
-            <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.86rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Phone size={14} style={{ color: '#C8102E' }} />
-                <span>1300 794 477</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Mail size={14} style={{ color: '#C8102E' }} />
-                <span>info@swiszta.com</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <MapPin size={14} style={{ color: '#C8102E' }} />
-                <span>1/42 Global Drive, Tullamarine VIC 3049, Australia</span>
-              </div>
-            </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="footer-title">QUICK LINKS</h4>
-            <ul className="footer-links">
-              <li><a href="#home" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>Home</a></li>
+          {/* Column 2: QUICK LINKS */}
+          <div className="footer-col">
+            <h4 className="footer-heading">QUICK LINKS</h4>
+            <ul className="footer-list">
               <li><a href="#about" onClick={(e) => { e.preventDefault(); onNavigate('about'); }}>About Us</a></li>
               <li><a href="#services" onClick={(e) => { e.preventDefault(); onNavigate('services'); }}>Our Services</a></li>
               <li><a href="#solutions" onClick={(e) => { e.preventDefault(); onNavigate('solutions'); }}>Solutions</a></li>
               <li><a href="#clients" onClick={(e) => { e.preventDefault(); onNavigate('clients'); }}>Our Clients</a></li>
               <li><a href="#careers" onClick={(e) => { e.preventDefault(); onNavigate('careers'); }}>Careers</a></li>
-              <li><a href="#quote" onClick={(e) => { e.preventDefault(); onOpenQuote(); }}>Request Quote</a></li>
+              <li><a href="#whats-new" onClick={(e) => { e.preventDefault(); alert("What's New: Check back soon for company updates."); }}>What's New</a></li>
+              <li><a href="#contact" onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}>Contact Us</a></li>
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="footer-title">SERVICES</h4>
-            <ul className="footer-links">
+          {/* Column 3: SERVICES */}
+          <div className="footer-col">
+            <h4 className="footer-heading">SERVICES</h4>
+            <ul className="footer-list">
               <li><a href="#services" onClick={(e) => { e.preventDefault(); onNavigate('services'); }}>Housekeeping</a></li>
               <li><a href="#services" onClick={(e) => { e.preventDefault(); onNavigate('services'); }}>Laundry Services</a></li>
               <li><a href="#services" onClick={(e) => { e.preventDefault(); onNavigate('services'); }}>Catering & F&B</a></li>
               <li><a href="#services" onClick={(e) => { e.preventDefault(); onNavigate('services'); }}>Maintenance</a></li>
-              <li><a href="#services" onClick={(e) => { e.preventDefault(); onNavigate('services'); }}>Concierge Services</a></li>
-              <li><a href="#services" onClick={(e) => { e.preventDefault(); onNavigate('services'); }}>Procurement & Supply</a></li>
+              <li><a href="#services" onClick={(e) => { e.preventDefault(); onNavigate('services'); }}>Concierge</a></li>
+              <li><a href="#services" onClick={(e) => { e.preventDefault(); onNavigate('services'); }}>Facility Management</a></li>
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div className="footer-newsletter">
-            <h4 className="footer-title">NEWSLETTER</h4>
-            <p>Subscribe to receive industry insights, hospitality trends, and service updates.</p>
-            {subscribed ? (
-              <div style={{ background: 'rgba(200, 16, 46, 0.2)', border: '1px solid #C8102E', color: '#FFFFFF', padding: '10px', borderRadius: '4px', fontSize: '0.85rem' }}>
-                ✓ Thank you! You have successfully subscribed.
+          {/* Column 4: ACCREDITATIONS & MEMBERSHIPS */}
+          <div className="footer-col">
+            <h4 className="footer-heading">ACCREDITATIONS & MEMBERSHIPS</h4>
+            <div className="accreditations-grid">
+              
+              {/* ISO 9001 Bureau Veritas */}
+              <div style={{
+                backgroundColor: '#C8102E',
+                color: '#FFFFFF',
+                borderRadius: '4px',
+                padding: '6px 8px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '6px'
+              }}>
+                <div style={{ fontSize: '0.62rem', fontWeight: 800, lineHeight: 1.2 }}>
+                  ISO 9001<br />
+                  <span style={{ fontSize: '0.58rem', fontWeight: 700 }}>BUREAU VERITAS</span><br />
+                  <span style={{ fontSize: '0.54rem', fontWeight: 400, opacity: 0.9 }}>Certification</span>
+                </div>
+                <div style={{
+                  width: '28px',
+                  height: '28px',
+                  borderRadius: '50%',
+                  backgroundColor: '#FFFFFF',
+                  color: '#C8102E',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '0.65rem',
+                  fontWeight: 900,
+                  flexShrink: 0
+                }}>
+                  1828
+                </div>
               </div>
-            ) : (
-              <form className="newsletter-form" onSubmit={handleSubscribe}>
-                <input 
-                  type="email" 
-                  className="newsletter-input" 
-                  placeholder="Your Email Address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-                <button type="submit" className="btn btn-red" style={{ padding: '10px 16px' }}>
-                  <ChevronRight size={18} />
-                </button>
-              </form>
-            )}
+
+              {/* Facility Management Association */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#00A3E0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 17L12 22L22 17" stroke="#00A3E0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 12L12 17L22 12" stroke="#00A3E0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <div style={{ fontSize: '0.62rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.15 }}>
+                  FACILITY MANAGEMENT<br />
+                  ASSOCIATION<br />
+                  <span style={{ fontSize: '0.55rem', fontWeight: 600, color: '#A0AEC0' }}>OF AUSTRALIA</span>
+                </div>
+              </div>
+
+              {/* Kinaway */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <div style={{ color: '#E53E3E', fontSize: '1.2rem', fontWeight: 900, lineHeight: 1 }}>
+                  ✦
+                </div>
+                <div style={{ lineHeight: 1.15 }}>
+                  <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '0.5px' }}>
+                    Kinaway
+                  </div>
+                  <div style={{ fontSize: '0.52rem', color: '#A0AEC0', textTransform: 'uppercase' }}>
+                    Chamber of Commerce
+                  </div>
+                </div>
+              </div>
+
+              {/* Supply Nation */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <div style={{
+                  width: '24px',
+                  height: '24px',
+                  borderRadius: '50%',
+                  background: 'conic-gradient(from 0deg, #E53E3E, #DD6B20, #319795, #3182CE, #E53E3E)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
+                }}>
+                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#111518' }}></div>
+                </div>
+                <div style={{ lineHeight: 1.15 }}>
+                  <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#FFFFFF' }}>
+                    Supply Nation
+                  </div>
+                  <div style={{ fontSize: '0.55rem', fontWeight: 700, color: '#A0AEC0', letterSpacing: '0.5px' }}>
+                    REGISTERED
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Column 5: GET IN TOUCH */}
+          <div className="footer-col">
+            <h4 className="footer-heading">GET IN TOUCH</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              
+              {/* Phone */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{
+                  width: '24px',
+                  height: '24px',
+                  borderRadius: '50%',
+                  backgroundColor: '#C8102E',
+                  color: '#FFFFFF',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
+                }}>
+                  <Phone size={12} />
+                </div>
+                <a href="tel:1300794477" style={{ fontSize: '0.85rem', fontWeight: 700, color: '#FFFFFF' }}>
+                  1300 794 477
+                </a>
+              </div>
+
+              {/* Email */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{
+                  width: '24px',
+                  height: '24px',
+                  borderRadius: '50%',
+                  backgroundColor: '#C8102E',
+                  color: '#FFFFFF',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
+                }}>
+                  <Mail size={12} />
+                </div>
+                <a href="mailto:info@swiszta.com" style={{ fontSize: '0.85rem', color: '#CBD5E0' }}>
+                  info@swiszta.com
+                </a>
+              </div>
+
+              {/* Website */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{
+                  width: '24px',
+                  height: '24px',
+                  borderRadius: '50%',
+                  backgroundColor: '#C8102E',
+                  color: '#FFFFFF',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
+                }}>
+                  <Globe size={12} />
+                </div>
+                <a href="https://www.swiszta.com" target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: '#CBD5E0' }}>
+                  www.swiszta.com
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        {/* Footer Bottom Bar */}
+        <div className="footer-bottom-bar">
+          <div>
+            © 2024 SWISZTA Hotel & Hospitality Services. All Rights Reserved.
+          </div>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+            <a href="#privacy" onClick={(e) => { e.preventDefault(); alert('Privacy Policy: SWISZTA values your data privacy.'); }} style={{ color: '#A0AEC0' }}>
+              Privacy Policy
+            </a>
+            <span style={{ color: '#4A5568' }}>|</span>
+            <a href="#terms" onClick={(e) => { e.preventDefault(); alert('Terms & Conditions: Standard commercial hospitality terms apply.'); }} style={{ color: '#A0AEC0' }}>
+              Terms & Conditions
+            </a>
+            <span style={{ color: '#4A5568' }}>|</span>
+            <a href="#sitemap" onClick={(e) => { e.preventDefault(); alert('Site Map: SWISZTA site overview.'); }} style={{ color: '#A0AEC0' }}>
+              Site Map
+            </a>
           </div>
         </div>
 
-        <div className="footer-bottom">
-          <div>
-            © {new Date().getFullYear()} SWISZTA Hotel & Hospitality Services. All Rights Reserved.
-          </div>
-          <div style={{ display: 'flex', gap: '20px' }}>
-            <a href="#privacy" onClick={(e) => { e.preventDefault(); alert('Privacy Policy: SWISZTA respects your data privacy.'); }}>Privacy Policy</a>
-            <a href="#terms" onClick={(e) => { e.preventDefault(); alert('Terms of Service: Standard commercial hospitality terms apply.'); }}>Terms of Service</a>
-          </div>
-        </div>
       </div>
     </footer>
   );

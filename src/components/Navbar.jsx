@@ -40,15 +40,6 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
               HOME
             </a>
           </li>
-          <li>
-            <a 
-              href="#about" 
-              className={`nav-link ${activePage === 'about' ? 'active' : ''}`}
-              onClick={(e) => { e.preventDefault(); handleNavClick('about'); }}
-            >
-              ABOUT US
-            </a>
-          </li>
           <li 
             style={{ position: 'relative' }}
             onMouseEnter={() => setServicesDropdown(true)}
@@ -165,6 +156,15 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
           </li>
           <li>
             <a 
+              href="#whatsnew" 
+              className={`nav-link ${activePage === 'whatsnew' ? 'active' : ''}`}
+              onClick={(e) => { e.preventDefault(); handleNavClick('whatsnew'); }}
+            >
+              WHAT'S NEW
+            </a>
+          </li>
+          <li>
+            <a 
               href="#contact" 
               className={`nav-link ${activePage === 'contact' ? 'active' : ''}`}
               onClick={(e) => { e.preventDefault(); handleNavClick('contact'); }}
@@ -200,7 +200,7 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
           flexDirection: 'column',
           gap: '16px'
         }}>
-          {['home', 'about', 'services', 'solutions', 'clients', 'careers', 'contact'].map((item) => (
+          {['home', 'services', 'solutions', 'clients', 'careers', 'whatsnew', 'contact'].map((item) => (
             <a
               key={item}
               href={`#${item}`}
@@ -215,11 +215,12 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
                 handleNavClick(item);
               }}
             >
-              {item === 'home' ? 'HOME' : item === 'about' ? 'ABOUT US' : item === 'clients' ? 'OUR CLIENTS' : item === 'contact' ? 'CONTACT US' : item.toUpperCase()}
+              {item === 'home' ? 'HOME' : item === 'clients' ? 'OUR CLIENTS' : item === 'whatsnew' ? "WHAT'S NEW" : item === 'contact' ? 'CONTACT US' : item.toUpperCase()}
             </a>
           ))}
         </div>
       )}
+
     </header>
   );
 }

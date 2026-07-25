@@ -5,9 +5,11 @@ import {
   Smile, Star, PhoneCall, Search, ClipboardCheck, BedDouble, Globe, Building2, Calendar
 } from 'lucide-react';
 
+import CateringServiceView from '../components/CateringServiceView';
+
 export default function ServicesPage({ onOpenQuote, onSelectService }) {
-  // activeSubView: 'overview' | 'housekeeping' | 'laundry' | 'catering' | 'maintenance' | 'concierge' | 'procurement'
-  const [activeSubView, setActiveSubView] = useState('overview');
+  // activeSubView: 'catering' | 'overview' | 'housekeeping' | 'laundry' | 'maintenance' | 'concierge' | 'procurement'
+  const [activeSubView, setActiveSubView] = useState('catering');
 
   const mainServicesList = [
     {
@@ -350,134 +352,141 @@ export default function ServicesPage({ onOpenQuote, onSelectService }) {
             </div>
           </div>
 
-          {/* Hero for Housekeeping Detail */}
-          <section 
-            className="hero-section" 
-            style={{ 
-              backgroundImage: `url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1920&q=80')`,
-              minHeight: '480px',
-              padding: '50px 0 100px'
-            }}
-          >
-            <div className="hero-overlay" style={{ background: 'linear-gradient(90deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.8) 45%, rgba(255,255,255,0.15) 100%)' }}></div>
+          {/* Render Catering Service View when catering is selected */}
+          {activeSubView === 'catering' ? (
+            <CateringServiceView onOpenQuote={onOpenQuote} />
+          ) : (
+            <>
+              {/* General Detail View Header */}
+              <section 
+                className="hero-section" 
+                style={{ 
+                  backgroundImage: `url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1920&q=80')`,
+                  minHeight: '480px',
+                  padding: '50px 0 100px'
+                }}
+              >
+                <div className="hero-overlay" style={{ background: 'linear-gradient(90deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.8) 45%, rgba(255,255,255,0.15) 100%)' }}></div>
 
-            <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-              <div className="hero-content-wrapper" style={{ maxWidth: '580px' }}>
-                <div 
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.88)',
-                    backdropFilter: 'blur(16px)',
-                    WebkitBackdropFilter: 'blur(16px)',
-                    border: '1px solid rgba(255, 255, 255, 0.9)',
-                    padding: '36px',
-                    borderRadius: '12px',
-                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.08)'
-                  }}
-                >
-                  <div className="hero-badge-line" style={{ color: '#C8102E', fontSize: '0.78rem', fontWeight: 800 }}>
-                    {activeSubView.toUpperCase()} SERVICES
-                  </div>
-
-                  <h1 className="hero-title" style={{ color: '#1E252B', fontSize: '2.8rem', lineHeight: '1.1', marginBottom: '16px' }}>
-                    Impeccable Rooms. <br />
-                    <span style={{ color: '#C8102E' }}>Exceptional Stays.</span>
-                  </h1>
-
-                  <p style={{ color: '#4A5568', fontSize: '0.9rem', lineHeight: '1.5', marginBottom: '20px' }}>
-                    At SWISZTA, we deliver superior housekeeping services that create clean, comfortable and welcoming environments for every guest, every time.
-                  </p>
-
-                  <button className="btn btn-red" onClick={onOpenQuote}>
-                    REQUEST A QUOTE <ChevronRight size={16} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* 6 Feature Cards Row */}
-          <div className="container" style={{ position: 'relative', zIndex: 30, marginTop: '-50px', marginBottom: '60px' }}>
-            <div 
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(6, 1fr)',
-                background: '#FFFFFF',
-                borderRadius: '16px',
-                boxShadow: '0 12px 36px rgba(0, 0, 0, 0.08)',
-                border: '1px solid #E5E9EC',
-                overflow: 'hidden'
-              }}
-            >
-              {[
-                { title: 'Spotless Cleanliness', desc: 'Thorough cleaning for guest-ready rooms.', icon: Sparkles },
-                { title: 'Hygiene First', desc: 'Health and safety is our top priority.', icon: ShieldCheck },
-                { title: 'On-Time Service', desc: 'Rooms ready on time, every time.', icon: Clock },
-                { title: 'Trained Professionals', desc: 'Well-trained teams delivering with pride and care.', icon: Users },
-                { title: 'Quality Assurance', desc: 'Regular inspections to maintain high standards.', icon: Award },
-                { title: 'Sustainable Practices', desc: 'Eco-friendly products and responsible methods.', icon: Leaf }
-              ].map((card, idx) => {
-                const IconComp = card.icon;
-                return (
-                  <div 
-                    key={idx}
-                    style={{
-                      padding: '24px 14px',
-                      textAlign: 'center',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      gap: '8px',
-                      borderRight: idx === 5 ? 'none' : '1px solid #E5E9EC'
-                    }}
-                  >
+                <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+                  <div className="hero-content-wrapper" style={{ maxWidth: '580px' }}>
                     <div 
                       style={{
-                        width: '44px',
-                        height: '44px',
-                        borderRadius: '50%',
-                        background: 'rgba(200, 16, 46, 0.06)',
-                        color: '#C8102E',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justify: 'center'
+                        background: 'rgba(255, 255, 255, 0.88)',
+                        backdropFilter: 'blur(16px)',
+                        WebkitBackdropFilter: 'blur(16px)',
+                        border: '1px solid rgba(255, 255, 255, 0.9)',
+                        padding: '36px',
+                        borderRadius: '12px',
+                        boxShadow: '0 20px 50px rgba(0, 0, 0, 0.08)'
                       }}
                     >
-                      <IconComp size={22} />
-                    </div>
-                    <h4 style={{ fontSize: '0.86rem', fontWeight: 800, color: '#1E252B', marginTop: '2px' }}>
-                      {card.title}
-                    </h4>
-                    <p style={{ fontSize: '0.74rem', color: '#718096', lineHeight: '1.35' }}>
-                      {card.desc}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+                      <div className="hero-badge-line" style={{ color: '#C8102E', fontSize: '0.78rem', fontWeight: 800 }}>
+                        {activeSubView.toUpperCase()} SERVICES
+                      </div>
 
-          {/* Red Callout Banner */}
-          <section style={{ background: '#C8102E', color: '#FFFFFF', padding: '24px 0' }}>
-            <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <PhoneCall size={24} />
+                      <h1 className="hero-title" style={{ color: '#1E252B', fontSize: '2.8rem', lineHeight: '1.1', marginBottom: '16px' }}>
+                        Impeccable Rooms. <br />
+                        <span style={{ color: '#C8102E' }}>Exceptional Stays.</span>
+                      </h1>
+
+                      <p style={{ color: '#4A5568', fontSize: '0.9rem', lineHeight: '1.5', marginBottom: '20px' }}>
+                        At SWISZTA, we deliver superior hospitality support services that create clean, comfortable and welcoming environments for every guest, every time.
+                      </p>
+
+                      <button className="btn btn-red" onClick={onOpenQuote}>
+                        REQUEST A QUOTE <ChevronRight size={16} />
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#FFFFFF' }}>Impeccable rooms. Happy guests.</h3>
-                  <p style={{ fontSize: '0.86rem', color: 'rgba(255,255,255,0.9)' }}>Partner with SWISZTA for world-class housekeeping services.</p>
+              </section>
+
+              {/* 6 Feature Cards Row */}
+              <div className="container" style={{ position: 'relative', zIndex: 30, marginTop: '-50px', marginBottom: '60px' }}>
+                <div 
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(6, 1fr)',
+                    background: '#FFFFFF',
+                    borderRadius: '16px',
+                    boxShadow: '0 12px 36px rgba(0, 0, 0, 0.08)',
+                    border: '1px solid #E5E9EC',
+                    overflow: 'hidden'
+                  }}
+                >
+                  {[
+                    { title: 'Spotless Cleanliness', desc: 'Thorough cleaning for guest-ready rooms.', icon: Sparkles },
+                    { title: 'Hygiene First', desc: 'Health and safety is our top priority.', icon: ShieldCheck },
+                    { title: 'On-Time Service', desc: 'Rooms ready on time, every time.', icon: Clock },
+                    { title: 'Trained Professionals', desc: 'Well-trained teams delivering with pride and care.', icon: Users },
+                    { title: 'Quality Assurance', desc: 'Regular inspections to maintain high standards.', icon: Award },
+                    { title: 'Sustainable Practices', desc: 'Eco-friendly products and responsible methods.', icon: Leaf }
+                  ].map((card, idx) => {
+                    const IconComp = card.icon;
+                    return (
+                      <div 
+                        key={idx}
+                        style={{
+                          padding: '24px 14px',
+                          textAlign: 'center',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          gap: '8px',
+                          borderRight: idx === 5 ? 'none' : '1px solid #E5E9EC'
+                        }}
+                      >
+                        <div 
+                          style={{
+                            width: '44px',
+                            height: '44px',
+                            borderRadius: '50%',
+                            background: 'rgba(200, 16, 46, 0.06)',
+                            color: '#C8102E',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justify: 'center'
+                          }}
+                        >
+                          <IconComp size={22} />
+                        </div>
+                        <h4 style={{ fontSize: '0.86rem', fontWeight: 800, color: '#1E252B', marginTop: '2px' }}>
+                          {card.title}
+                        </h4>
+                        <p style={{ fontSize: '0.74rem', color: '#718096', lineHeight: '1.35' }}>
+                          {card.desc}
+                        </p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
-              <button 
-                className="btn" 
-                style={{ background: '#FFFFFF', color: '#C8102E', padding: '12px 24px', fontWeight: 800 }}
-                onClick={onOpenQuote}
-              >
-                TALK TO OUR TEAM <ChevronRight size={16} />
-              </button>
-            </div>
-          </section>
+              {/* Red Callout Banner */}
+              <section style={{ background: '#C8102E', color: '#FFFFFF', padding: '24px 0' }}>
+                <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                    <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <PhoneCall size={24} />
+                    </div>
+                    <div>
+                      <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#FFFFFF' }}>Impeccable rooms. Happy guests.</h3>
+                      <p style={{ fontSize: '0.86rem', color: 'rgba(255,255,255,0.9)' }}>Partner with SWISZTA for world-class hospitality services.</p>
+                    </div>
+                  </div>
+
+                  <button 
+                    className="btn" 
+                    style={{ background: '#FFFFFF', color: '#C8102E', padding: '12px 24px', fontWeight: 800 }}
+                    onClick={onOpenQuote}
+                  >
+                    TALK TO OUR TEAM <ChevronRight size={16} />
+                  </button>
+                </div>
+              </section>
+            </>
+          )}
         </div>
       )}
     </div>
