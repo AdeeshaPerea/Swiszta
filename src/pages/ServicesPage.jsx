@@ -6,10 +6,13 @@ import {
 } from 'lucide-react';
 
 import CateringServiceView from '../components/CateringServiceView';
+import LaundryServiceView from '../components/LaundryServiceView';
+import HousekeepingServiceView from '../components/HousekeepingServiceView';
+import MaintenanceServiceView from '../components/MaintenanceServiceView';
 
-export default function ServicesPage({ onOpenQuote, onSelectService }) {
-  // activeSubView: 'catering' | 'overview' | 'housekeeping' | 'laundry' | 'maintenance' | 'concierge' | 'procurement'
-  const [activeSubView, setActiveSubView] = useState('catering');
+export default function ServicesPage({ initialSubView = 'overview', onOpenQuote, onSelectService }) {
+  // activeSubView: 'overview' | 'catering' | 'housekeeping' | 'laundry' | 'maintenance' | 'concierge' | 'procurement'
+  const [activeSubView, setActiveSubView] = useState(initialSubView);
 
   const mainServicesList = [
     {
@@ -210,12 +213,12 @@ export default function ServicesPage({ onOpenQuote, onSelectService }) {
             </div>
           </section>
 
-          {/* 3. Delivering Excellence by Numbers */}
-          <section style={{ padding: '0 0 80px' }}>
+          {/* 3. Middle Banner: One Partner. All Services. Unmatched Standards. */}
+          <section style={{ padding: '0 0 64px' }}>
             <div className="container">
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '48px', alignItems: 'center' }}>
-                {/* Left Fine Dining Panoramic Image */}
-                <div style={{ borderRadius: '16px', overflow: 'hidden', height: '360px', boxShadow: '0 8px 30px rgba(0,0,0,0.1)' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '40px', alignItems: 'center' }}>
+                {/* Left Panoramic Fine Dining Restaurant Image */}
+                <div style={{ borderRadius: '16px', overflow: 'hidden', height: '320px', boxShadow: '0 8px 30px rgba(0,0,0,0.1)' }}>
                   <img 
                     src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80" 
                     alt="Luxury hotel dining restaurant with skyline view" 
@@ -223,84 +226,92 @@ export default function ServicesPage({ onOpenQuote, onSelectService }) {
                   />
                 </div>
 
-                {/* Right Metrics Grid */}
-                <div>
-                  <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-                    <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#1E252B' }}>
-                      Delivering <span style={{ color: '#C8102E' }}>Excellence</span> by Numbers
-                    </h2>
-                    <div style={{ display: 'flex', justifyContent: 'center', gap: '6px', marginTop: '8px' }}>
-                      <div style={{ width: '6px', height: '6px', background: '#C8102E', transform: 'rotate(45deg)' }}></div>
-                    </div>
+                {/* Right Light Gray Box with Award Ribbon Icon */}
+                <div 
+                  style={{
+                    backgroundColor: '#F8F9FA',
+                    borderRadius: '16px',
+                    border: '1px solid #E2E8F0',
+                    padding: '36px',
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '24px',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.03)'
+                  }}
+                >
+                  <div 
+                    style={{
+                      width: '64px',
+                      height: '64px',
+                      borderRadius: '50%',
+                      backgroundColor: '#C8102E',
+                      color: '#FFFFFF',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                      boxShadow: '0 6px 20px rgba(200, 16, 46, 0.3)'
+                    }}
+                  >
+                    <Award size={32} />
                   </div>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', textAlign: 'center' }}>
-                    <div>
-                      <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(200,16,46,0.06)', color: '#C8102E', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px' }}>
-                        <Building2 size={24} />
-                      </div>
-                      <div style={{ fontSize: '2rem', fontWeight: 800, color: '#C8102E', lineHeight: 1 }}>150+</div>
-                      <div style={{ fontSize: '0.78rem', fontWeight: 600, color: '#4A5568', marginTop: '4px', lineHeight: '1.3' }}>Hotels & Properties Serviced</div>
-                    </div>
-
-                    <div>
-                      <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(200,16,46,0.06)', color: '#C8102E', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px' }}>
-                        <Globe size={24} />
-                      </div>
-                      <div style={{ fontSize: '2rem', fontWeight: 800, color: '#C8102E', lineHeight: 1 }}>12</div>
-                      <div style={{ fontSize: '0.78rem', fontWeight: 600, color: '#4A5568', marginTop: '4px', lineHeight: '1.3' }}>Regions Worldwide</div>
-                    </div>
-
-                    <div>
-                      <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(200,16,46,0.06)', color: '#C8102E', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px' }}>
-                        <Users size={24} />
-                      </div>
-                      <div style={{ fontSize: '2rem', fontWeight: 800, color: '#C8102E', lineHeight: 1 }}>2,000+</div>
-                      <div style={{ fontSize: '0.78rem', fontWeight: 600, color: '#4A5568', marginTop: '4px', lineHeight: '1.3' }}>Trained Professionals</div>
-                    </div>
-
-                    <div>
-                      <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(200,16,46,0.06)', color: '#C8102E', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px' }}>
-                        <Award size={24} />
-                      </div>
-                      <div style={{ fontSize: '2rem', fontWeight: 800, color: '#C8102E', lineHeight: 1 }}>30+</div>
-                      <div style={{ fontSize: '0.78rem', fontWeight: 600, color: '#4A5568', marginTop: '4px', lineHeight: '1.3' }}>Years of Hospitality Excellence</div>
-                    </div>
+                  <div>
+                    <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#1E252B', lineHeight: 1.2, marginBottom: '8px' }}>
+                      One Partner. All Services. <br />
+                      <span style={{ color: '#C8102E' }}>Unmatched Standards.</span>
+                    </h2>
+                    <p style={{ fontSize: '0.94rem', color: '#657380', lineHeight: 1.6 }}>
+                      We bring all your hospitality needs together under one roof, ensuring consistency, quality and peace of mind.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* 4. Bottom Custom Solution Bar */}
-          <section style={{ padding: '0 0 80px' }}>
+          {/* 4. Bottom Red Metric Stat Bar (5 Red Columns) */}
+          <section style={{ backgroundColor: '#C8102E', color: '#FFFFFF', padding: '36px 0' }}>
             <div className="container">
-              <div 
-                style={{ 
-                  background: '#F8F9FA', 
-                  border: '1px solid #E5E9EC', 
-                  borderRadius: '16px', 
-                  padding: '24px 32px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justify: 'space-between',
-                  flexWrap: 'wrap',
-                  gap: '16px'
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                  <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: '#C8102E', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <PhoneCall size={24} />
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1E252B' }}>Need a Custom Solution for Your Property?</h3>
-                    <p style={{ fontSize: '0.86rem', color: '#718096', marginTop: '2px' }}>Our team is ready to create a tailored plan that fits your unique needs.</p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '16px', textAlign: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
+                  <Building2 size={32} style={{ opacity: 0.9 }} />
+                  <div style={{ textAlign: 'left' }}>
+                    <div style={{ fontSize: '1.8rem', fontWeight: 900, lineHeight: 1 }}>150+</div>
+                    <div style={{ fontSize: '0.78rem', fontWeight: 600, opacity: 0.9, marginTop: '2px' }}>Hotels &amp; Properties Serviced</div>
                   </div>
                 </div>
 
-                <button className="btn btn-red" onClick={onOpenQuote}>
-                  LET'S TALK <ChevronRight size={16} />
-                </button>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
+                  <Globe size={32} style={{ opacity: 0.9 }} />
+                  <div style={{ textAlign: 'left' }}>
+                    <div style={{ fontSize: '1.8rem', fontWeight: 900, lineHeight: 1 }}>12</div>
+                    <div style={{ fontSize: '0.78rem', fontWeight: 600, opacity: 0.9, marginTop: '2px' }}>Regions Worldwide</div>
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
+                  <Users size={32} style={{ opacity: 0.9 }} />
+                  <div style={{ textAlign: 'left' }}>
+                    <div style={{ fontSize: '1.8rem', fontWeight: 900, lineHeight: 1 }}>2,000+</div>
+                    <div style={{ fontSize: '0.78rem', fontWeight: 600, opacity: 0.9, marginTop: '2px' }}>Trained Professionals</div>
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
+                  <Award size={32} style={{ opacity: 0.9 }} />
+                  <div style={{ textAlign: 'left' }}>
+                    <div style={{ fontSize: '1.8rem', fontWeight: 900, lineHeight: 1 }}>30+</div>
+                    <div style={{ fontSize: '0.78rem', fontWeight: 600, opacity: 0.9, marginTop: '2px' }}>Years of Hospitality Excellence</div>
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
+                  <Award size={32} style={{ opacity: 0.9 }} />
+                  <div style={{ textAlign: 'left' }}>
+                    <div style={{ fontSize: '1.8rem', fontWeight: 900, lineHeight: 1 }}>100+</div>
+                    <div style={{ fontSize: '0.78rem', fontWeight: 600, opacity: 0.9, marginTop: '2px' }}>Satisfied Hotel Partners</div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -352,16 +363,24 @@ export default function ServicesPage({ onOpenQuote, onSelectService }) {
             </div>
           </div>
 
-          {/* Render Catering Service View when catering is selected */}
-          {activeSubView === 'catering' ? (
-            <CateringServiceView onOpenQuote={onOpenQuote} />
-          ) : (
+          {/* Render dedicated sub-view components */}
+          {activeSubView === 'catering' && <CateringServiceView onOpenQuote={onOpenQuote} />}
+          {activeSubView === 'laundry' && <LaundryServiceView onOpenQuote={onOpenQuote} />}
+          {activeSubView === 'housekeeping' && <HousekeepingServiceView onOpenQuote={onOpenQuote} />}
+          {activeSubView === 'maintenance' && <MaintenanceServiceView onOpenQuote={onOpenQuote} />}
+
+          {/* General View for Concierge / Procurement */}
+          {activeSubView !== 'catering' && activeSubView !== 'laundry' && activeSubView !== 'housekeeping' && activeSubView !== 'maintenance' && (
             <>
-              {/* General Detail View Header */}
+              {/* Service Detail View Header */}
               <section 
                 className="hero-section" 
                 style={{ 
-                  backgroundImage: `url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1920&q=80')`,
+                  backgroundImage: `url('${
+                    activeSubView === 'concierge' 
+                      ? 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80' 
+                      : 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80'
+                  }')`,
                   minHeight: '480px',
                   padding: '50px 0 100px'
                 }}
@@ -386,12 +405,17 @@ export default function ServicesPage({ onOpenQuote, onSelectService }) {
                       </div>
 
                       <h1 className="hero-title" style={{ color: '#1E252B', fontSize: '2.8rem', lineHeight: '1.1', marginBottom: '16px' }}>
-                        Impeccable Rooms. <br />
-                        <span style={{ color: '#C8102E' }}>Exceptional Stays.</span>
+                        {activeSubView === 'concierge' ? (
+                          <>Personalised Assistance. <br /><span style={{ color: '#C8102E' }}>Local Expertise.</span></>
+                        ) : (
+                          <>Smart Sourcing. <br /><span style={{ color: '#C8102E' }}>Efficient Supply Chains.</span></>
+                        )}
                       </h1>
 
                       <p style={{ color: '#4A5568', fontSize: '0.9rem', lineHeight: '1.5', marginBottom: '20px' }}>
-                        At SWISZTA, we deliver superior hospitality support services that create clean, comfortable and welcoming environments for every guest, every time.
+                        {activeSubView === 'concierge' 
+                          ? 'SWISZTA provides warm, professional concierge and front-of-house services that ensure your guests feel welcomed, supported and valued at every turn.'
+                          : 'SWISZTA Procurement delivers cost-effective supply chain management, quality sourcing and inventory control tailored for hotel operations.'}
                       </p>
 
                       <button className="btn btn-red" onClick={onOpenQuote}>
@@ -399,90 +423,6 @@ export default function ServicesPage({ onOpenQuote, onSelectService }) {
                       </button>
                     </div>
                   </div>
-                </div>
-              </section>
-
-              {/* 6 Feature Cards Row */}
-              <div className="container" style={{ position: 'relative', zIndex: 30, marginTop: '-50px', marginBottom: '60px' }}>
-                <div 
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(6, 1fr)',
-                    background: '#FFFFFF',
-                    borderRadius: '16px',
-                    boxShadow: '0 12px 36px rgba(0, 0, 0, 0.08)',
-                    border: '1px solid #E5E9EC',
-                    overflow: 'hidden'
-                  }}
-                >
-                  {[
-                    { title: 'Spotless Cleanliness', desc: 'Thorough cleaning for guest-ready rooms.', icon: Sparkles },
-                    { title: 'Hygiene First', desc: 'Health and safety is our top priority.', icon: ShieldCheck },
-                    { title: 'On-Time Service', desc: 'Rooms ready on time, every time.', icon: Clock },
-                    { title: 'Trained Professionals', desc: 'Well-trained teams delivering with pride and care.', icon: Users },
-                    { title: 'Quality Assurance', desc: 'Regular inspections to maintain high standards.', icon: Award },
-                    { title: 'Sustainable Practices', desc: 'Eco-friendly products and responsible methods.', icon: Leaf }
-                  ].map((card, idx) => {
-                    const IconComp = card.icon;
-                    return (
-                      <div 
-                        key={idx}
-                        style={{
-                          padding: '24px 14px',
-                          textAlign: 'center',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'center',
-                          gap: '8px',
-                          borderRight: idx === 5 ? 'none' : '1px solid #E5E9EC'
-                        }}
-                      >
-                        <div 
-                          style={{
-                            width: '44px',
-                            height: '44px',
-                            borderRadius: '50%',
-                            background: 'rgba(200, 16, 46, 0.06)',
-                            color: '#C8102E',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justify: 'center'
-                          }}
-                        >
-                          <IconComp size={22} />
-                        </div>
-                        <h4 style={{ fontSize: '0.86rem', fontWeight: 800, color: '#1E252B', marginTop: '2px' }}>
-                          {card.title}
-                        </h4>
-                        <p style={{ fontSize: '0.74rem', color: '#718096', lineHeight: '1.35' }}>
-                          {card.desc}
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Red Callout Banner */}
-              <section style={{ background: '#C8102E', color: '#FFFFFF', padding: '24px 0' }}>
-                <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                    <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <PhoneCall size={24} />
-                    </div>
-                    <div>
-                      <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#FFFFFF' }}>Impeccable rooms. Happy guests.</h3>
-                      <p style={{ fontSize: '0.86rem', color: 'rgba(255,255,255,0.9)' }}>Partner with SWISZTA for world-class hospitality services.</p>
-                    </div>
-                  </div>
-
-                  <button 
-                    className="btn" 
-                    style={{ background: '#FFFFFF', color: '#C8102E', padding: '12px 24px', fontWeight: 800 }}
-                    onClick={onOpenQuote}
-                  >
-                    TALK TO OUR TEAM <ChevronRight size={16} />
-                  </button>
                 </div>
               </section>
             </>

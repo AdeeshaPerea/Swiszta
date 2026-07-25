@@ -7,6 +7,8 @@ import StatsAndClients from './components/StatsAndClients';
 import TestimonialQuote from './components/TestimonialQuote';
 import Footer from './components/Footer';
 
+import WatermarkOverlay from './components/WatermarkOverlay';
+
 /* Modals */
 import QuoteModal from './components/QuoteModal';
 import VideoModal from './components/VideoModal';
@@ -14,7 +16,6 @@ import ServiceDetailModal from './components/ServiceDetailModal';
 import ClientsModal from './components/ClientsModal';
 
 /* Pages */
-import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import SolutionsPage from './pages/SolutionsPage';
 import CareersPage from './pages/CareersPage';
@@ -23,12 +24,13 @@ import WhatsNewPage from './pages/WhatsNewPage';
 
 export default function App() {
   const [activePage, setActivePage] = useState('home');
+  const [activeServiceSubView, setActiveServiceSubView] = useState('overview');
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isClientsOpen, setIsClientsOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
 
-  const handleNavigate = (page) => {
+  const handleNavigate = (page, subview = 'overview') => {
     if (page === 'about') {
       setActivePage('home');
       setTimeout(() => {
@@ -36,6 +38,7 @@ export default function App() {
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 50);
     } else {
+      setActiveServiceSubView(subview);
       setActivePage(page);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -75,6 +78,8 @@ export default function App() {
 
         {activePage === 'services' && (
           <ServicesPage 
+            key={activeServiceSubView}
+            initialSubView={activeServiceSubView}
             onOpenQuote={() => setIsQuoteOpen(true)} 
             onSelectService={(svc) => setSelectedService(svc)} 
           />
@@ -131,6 +136,9 @@ export default function App() {
         isOpen={isClientsOpen} 
         onClose={() => setIsClientsOpen(false)} 
       />
+
+      {/* Watermark Overlay (Remove this line after payment received) */}
+      <WatermarkOverlay />
     </div>
   );
 }

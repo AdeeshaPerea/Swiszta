@@ -15,35 +15,35 @@ export default function AboutPage({ onOpenQuote }) {
     {
       name: 'Jason Neville',
       role: 'Chief Executive Officer',
-      image: '/images/team/jeson neville.png',
+      image: '/images/team/jason neville.png',
       bio: 'Visionary leader with over 25 years of experience in healthcare and hospitality operations across Australia.',
       linkedin: 'https://linkedin.com'
     },
     {
       name: 'Robert Di Giulio',
       role: 'Head of Growth & Client Retention',
-      image: '/images/team/robert di giulio.png',
+      image: '/images/team/robert.jpg',
       bio: 'Leads business growth and client relationships with a focus on strategic partnerships and long-term value creation.',
       linkedin: 'https://linkedin.com'
     },
     {
       name: 'Deshani Gomas',
       role: 'Chief Financial Officer',
-      image: '/images/team/Deshani gomas.png',
+      image: '/images/team/deshani.jpg',
       bio: 'Finance leader focused on sustainable growth, governance and delivering strong financial performance.',
       linkedin: 'https://linkedin.com'
     },
     {
       name: 'Glen Fernando',
       role: 'Chairman',
-      image: '/images/team/gelen fernado.png',
+      image: '/images/team/glen.jpg',
       bio: 'Entrepreneur and strategic leader with over 30 years of experience in building and managing successful businesses.',
       linkedin: 'https://linkedin.com'
     },
     {
       name: 'Danny Fernandez',
       role: 'National Operations Manager',
-      image: '/images/team/danny fernadez.png',
+      image: '/images/team/danny.jpg',
       bio: 'Operations expert ensuring consistent service delivery, quality and performance across all regions.',
       linkedin: 'https://linkedin.com'
     }
@@ -446,6 +446,67 @@ export default function AboutPage({ onOpenQuote }) {
               {brand}
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* 7. Bottom Dark Contact Banner */}
+      <div style={{ backgroundColor: '#13181C', color: '#FFFFFF', padding: '40px 0' }}>
+        <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '24px' }}>
+
+          {/* Left Title */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', maxWidth: '520px' }}>
+            <div style={{
+              width: '48px',
+              height: '48px',
+              borderRadius: '50%',
+              backgroundColor: '#C8102E',
+              color: '#FFFFFF',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0
+            }}>
+              <Phone size={22} />
+            </div>
+            <div>
+              <h4 style={{ fontSize: '1.2rem', fontWeight: 800, lineHeight: 1.2, marginBottom: '4px' }}>
+                Strong Leadership. Shared Vision. <br />
+                <span style={{ color: '#C8102E' }}>Creating Exceptional Hospitality Experiences.</span>
+              </h4>
+              <p style={{ fontSize: '0.82rem', color: '#A0AEC0', lineHeight: 1.4 }}>
+                Our leadership team is dedicated to building lasting partnerships and delivering value for today and the future.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Contact Info & Button */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', fontWeight: 700 }}>
+              <div style={{ width: '28px', height: '28px', borderRadius: '50%', backgroundColor: '#C8102E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Phone size={14} />
+              </div>
+              <span>1300 794 477</span>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem' }}>
+              <div style={{ width: '28px', height: '28px', borderRadius: '50%', backgroundColor: '#C8102E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Mail size={14} />
+              </div>
+              <span style={{ color: '#CBD5E0' }}>info@swiszta.com</span>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem' }}>
+              <div style={{ width: '28px', height: '28px', borderRadius: '50%', backgroundColor: '#C8102E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <MapPin size={14} />
+              </div>
+              <span style={{ color: '#A0AEC0' }}>1/42 Global Drive, Tullamarine VIC 3049, Australia</span>
+            </div>
+
+            <button className="btn btn-red" onClick={onOpenQuote} style={{ padding: '12px 24px' }}>
+              GET IN TOUCH <ChevronRight size={16} />
+            </button>
+          </div>
+
         </div>
       </div>
 

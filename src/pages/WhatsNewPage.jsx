@@ -272,11 +272,10 @@ export default function WhatsNewPage() {
                     }}
                   >
                     {/* Card Image */}
-                    <div style={{ height: '180px', position: 'relative', overflow: 'hidden' }}>
+                    <div className="card-image-wrap" style={{ height: '180px' }}>
                       <img 
                         src={article.image} 
                         alt={article.title} 
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       />
                     </div>
 

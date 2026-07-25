@@ -6,8 +6,10 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
   const [servicesDropdown, setServicesDropdown] = useState(false);
   const [solutionsDropdown, setSolutionsDropdown] = useState(false);
 
-  const handleNavClick = (page) => {
-    setActivePage(page);
+  const handleNavClick = (page, subview = 'overview') => {
+    setActivePage(page, subview);
+    setServicesDropdown(false);
+    setSolutionsDropdown(false);
     setMobileOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -64,10 +66,17 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
                 padding: '12px 0',
                 zIndex: 100
               }}>
-                {['Housekeeping', 'Laundry Services', 'Catering & F&B', 'Maintenance', 'Concierge', 'Procurement'].map((item) => (
+                {[
+                  { label: 'Housekeeping', key: 'housekeeping' },
+                  { label: 'Laundry Services', key: 'laundry' },
+                  { label: 'Catering & F&B', key: 'catering' },
+                  { label: 'Maintenance', key: 'maintenance' },
+                  { label: 'Concierge', key: 'concierge' },
+                  { label: 'Procurement', key: 'procurement' }
+                ].map((item) => (
                   <a
-                    key={item}
-                    href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                    key={item.key}
+                    href={`#${item.key}`}
                     style={{
                       display: 'block',
                       padding: '10px 20px',
@@ -77,12 +86,12 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
                     }}
                     onClick={(e) => {
                       e.preventDefault();
-                      handleNavClick('services');
+                      handleNavClick('services', item.key);
                     }}
                     onMouseEnter={(e) => e.target.style.color = '#C8102E'}
                     onMouseLeave={(e) => e.target.style.color = '#1E252B'}
                   >
-                    {item}
+                    {item.label}
                   </a>
                 ))}
               </div>
