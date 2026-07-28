@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Mail, Globe } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Footer({ onNavigate }) {
   return (
@@ -9,17 +10,13 @@ export default function Footer({ onNavigate }) {
           
           {/* Column 1: SWISZTA Logo & Description */}
           <div className="footer-col">
-            <div className="logo" onClick={() => onNavigate('home')} style={{ cursor: 'pointer', marginBottom: '16px' }}>
-              <div className="logo-grid">
-                <div className="logo-sq"></div>
-                <div className="logo-sq"></div>
-                <div className="logo-sq"></div>
-                <div className="logo-sq"></div>
-              </div>
-              <div className="logo-text">
-                <span className="logo-brand" style={{ color: '#FFFFFF' }}>SWISZTA</span>
-                <span className="logo-tagline" style={{ color: '#C8102E' }}>HOTEL & HOSPITALITY SERVICES</span>
-              </div>
+            <div style={{ marginBottom: '18px' }}>
+              <Logo 
+                variant="dark" 
+                size="md" 
+                showTagline={true} 
+                onClick={() => onNavigate('home')} 
+              />
             </div>
             <p style={{ fontSize: '0.82rem', color: '#A0AEC0', lineHeight: 1.5 }}>
               Delivering excellence in hotel & hospitality services across Australia and New Zealand.

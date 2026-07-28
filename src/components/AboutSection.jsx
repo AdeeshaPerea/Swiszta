@@ -97,8 +97,8 @@ export default function AboutSection({ onNavigate, onOpenVideo, onOpenQuote }) {
             {/* Video Play Trigger Box */}
             <div style={{ position: 'relative', height: '180px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' }}>
               <img 
-                src="/images/contact_hero.png" 
-                alt="SWISZTA Hospitality Operations" 
+                src="/images/reception_frontdesk.jpg" 
+                alt="SWISZTA Front Desk Receptionist Assisting Hotel Guest" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
               <button 

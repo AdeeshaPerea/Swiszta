@@ -75,8 +75,8 @@ export default function LaundryServiceView({ onOpenQuote }) {
 
             <div style={{ borderRadius: '16px', overflow: 'hidden', height: '420px', boxShadow: '0 12px 36px rgba(0,0,0,0.1)' }}>
               <img 
-                src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=1000&q=80" 
-                alt="Hotel Laundry Staff Folding Clean Linens" 
+                src="/images/laundry_hero.jpg" 
+                alt="SWISZTA Commercial Laundry Team Folding Fresh Hotel Linens" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </div>
@@ -159,8 +159,8 @@ export default function LaundryServiceView({ onOpenQuote }) {
 
           <div style={{ borderRadius: '16px', overflow: 'hidden', height: '360px', boxShadow: '0 8px 30px rgba(0,0,0,0.1)' }}>
             <img 
-              src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=1000&q=80" 
-              alt="Commercial laundry operator loading washing machine" 
+              src="/images/laundry_hero.jpg" 
+              alt="SWISZTA Industrial Laundry Facility and Linen Management" 
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </div>

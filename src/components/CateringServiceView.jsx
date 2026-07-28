@@ -140,8 +140,8 @@ export default function CateringServiceView({ onOpenQuote }) {
             {/* Right Hero Image */}
             <div style={{ borderRadius: '16px', overflow: 'hidden', height: '420px', boxShadow: '0 12px 36px rgba(0,0,0,0.1)' }}>
               <img 
-                src="/images/catering/chef.png" 
-                alt="Chef Plating Gourmet Catering Dish" 
+                src="/images/catering_hero.jpg" 
+                alt="SWISZTA Catering Staff Arranging Gourmet Dining Table" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </div>

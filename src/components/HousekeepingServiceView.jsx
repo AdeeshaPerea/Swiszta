@@ -83,8 +83,8 @@ export default function HousekeepingServiceView({ onOpenQuote }) {
 
             <div style={{ borderRadius: '16px', overflow: 'hidden', height: '420px', boxShadow: '0 12px 36px rgba(0,0,0,0.1)' }}>
               <img 
-                src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80" 
-                alt="Housekeeper preparing luxury hotel bed" 
+                src="/images/housekeeping_hero.jpg" 
+                alt="SWISZTA Housekeeping Attendant in Hotel Corridor" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </div>
@@ -168,8 +168,8 @@ export default function HousekeepingServiceView({ onOpenQuote }) {
 
           <div style={{ borderRadius: '16px', overflow: 'hidden', height: '340px', boxShadow: '0 8px 30px rgba(0,0,0,0.1)' }}>
             <img 
-              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80" 
-              alt="Housekeeper vacuuming modern hotel suite" 
+              src="/images/housekeeping_bedmaking.jpg" 
+              alt="SWISZTA Housekeeper Preparing Luxury Hotel Suite Bed" 
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </div>

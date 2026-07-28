@@ -7,25 +7,25 @@ export default function SolutionsPage({ onOpenQuote }) {
       title: 'Luxury 5-Star Hotels & Resorts',
       icon: Hotel,
       desc: 'Flawless housekeeping, VIP concierge, and fine dining operations designed to exceed demanding guest expectations.',
-      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80'
+      image: '/images/concierge_hero.jpg'
     },
     {
       title: 'Boutique Accommodations',
       icon: Building2,
       desc: 'Agile and scalable staffing models tailored for unique boutique properties needing high attention to detail.',
-      image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80'
+      image: '/images/housekeeping_hero.jpg'
     },
     {
       title: 'Serviced Apartments & Extended Stay',
       icon: Home,
       desc: 'Streamlined turnover cleaning, laundry rotation, and preventive maintenance for long-term residential guest suites.',
-      image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80'
+      image: '/images/laundry_hero.jpg'
     },
     {
       title: 'Commercial Hospitality Venues',
       icon: Briefcase,
       desc: 'Full-spectrum facilities management, event catering, and commercial cleaning for conventions and event centers.',
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80'
+      image: '/images/catering_hero.jpg'
     }
   ];
 

@@ -52,7 +52,7 @@ export default function ContactPage() {
       <div 
         style={{
           position: 'relative',
-          backgroundImage: `linear-gradient(to right, rgba(12, 16, 20, 0.88) 0%, rgba(12, 16, 20, 0.68) 55%, rgba(12, 16, 20, 0.45) 100%), url('/images/contact_hero.png')`,
+          backgroundImage: `linear-gradient(to right, rgba(12, 16, 20, 0.88) 0%, rgba(12, 16, 20, 0.68) 55%, rgba(12, 16, 20, 0.45) 100%), url('/images/reception_frontdesk.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           color: '#FFFFFF',

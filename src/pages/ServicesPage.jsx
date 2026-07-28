@@ -9,6 +9,8 @@ import CateringServiceView from '../components/CateringServiceView';
 import LaundryServiceView from '../components/LaundryServiceView';
 import HousekeepingServiceView from '../components/HousekeepingServiceView';
 import MaintenanceServiceView from '../components/MaintenanceServiceView';
+import ConciergeServiceView from '../components/ConciergeServiceView';
+import ProcurementServiceView from '../components/ProcurementServiceView';
 
 export default function ServicesPage({ initialSubView = 'overview', onOpenQuote, onSelectService }) {
   // activeSubView: 'overview' | 'catering' | 'housekeeping' | 'laundry' | 'maintenance' | 'concierge' | 'procurement'
@@ -20,42 +22,42 @@ export default function ServicesPage({ initialSubView = 'overview', onOpenQuote,
       title: 'Housekeeping',
       desc: 'Impeccable cleanliness and room care for a perfect stay.',
       icon: Sparkles,
-      image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80'
+      image: '/images/housekeeping_hero.jpg'
     },
     {
       id: 'laundry',
       title: 'Laundry Services',
       desc: 'High-quality laundry and linen care with on-time delivery.',
       icon: Shirt,
-      image: 'https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=600&q=80'
+      image: '/images/laundry_hero.jpg'
     },
     {
       id: 'catering',
       title: 'Catering & F&B',
       desc: 'Delicious culinary experiences tailored to every need.',
       icon: UtensilsCrossed,
-      image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80'
+      image: '/images/catering_hero.jpg'
     },
     {
       id: 'maintenance',
       title: 'Maintenance',
       desc: 'Preventive and corrective maintenance for smooth operations.',
       icon: Wrench,
-      image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80'
+      image: '/images/maintenance_hero.jpg'
     },
     {
       id: 'concierge',
       title: 'Concierge',
       desc: 'Personalised guest assistance and local expertise.',
       icon: ConciergeBell,
-      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80'
+      image: '/images/concierge_hero.jpg'
     },
     {
       id: 'procurement',
       title: 'Procurement',
       desc: 'Smart sourcing and cost-effective supply chain solutions.',
       icon: ShoppingCart,
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80'
+      image: '/images/procurement_hero.jpg'
     }
   ];
 
@@ -368,6 +370,8 @@ export default function ServicesPage({ initialSubView = 'overview', onOpenQuote,
           {activeSubView === 'laundry' && <LaundryServiceView onOpenQuote={onOpenQuote} />}
           {activeSubView === 'housekeeping' && <HousekeepingServiceView onOpenQuote={onOpenQuote} />}
           {activeSubView === 'maintenance' && <MaintenanceServiceView onOpenQuote={onOpenQuote} />}
+          {activeSubView === 'concierge' && <ConciergeServiceView onOpenQuote={onOpenQuote} />}
+          {activeSubView === 'procurement' && <ProcurementServiceView onOpenQuote={onOpenQuote} />}
 
           {/* General View for Concierge / Procurement */}
           {activeSubView !== 'catering' && activeSubView !== 'laundry' && activeSubView !== 'housekeeping' && activeSubView !== 'maintenance' && (

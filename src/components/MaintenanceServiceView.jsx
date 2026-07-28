@@ -85,8 +85,8 @@ export default function MaintenanceServiceView({ onOpenQuote }) {
 
             <div style={{ borderRadius: '16px', overflow: 'hidden', height: '420px', boxShadow: '0 12px 36px rgba(0,0,0,0.1)' }}>
               <img 
-                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=80" 
-                alt="Maintenance Technician Inspecting Facility Equipment" 
+                src="/images/maintenance_hero.jpg" 
+                alt="SWISZTA Maintenance Technician Repairing Hotel Facilities" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </div>

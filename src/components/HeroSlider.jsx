@@ -8,7 +8,7 @@ const slides = [
     titleFirst: 'Elevating Hospitality ',
     titleHighlight: 'Every Day.',
     desc: 'SWISZTA delivers integrated hospitality solutions that enhance guest satisfaction and operational excellence across hotels and premium properties.',
-    image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80',
+    image: '/images/concierge_hero.jpg',
     primaryAction: 'OUR SERVICES',
     secondaryAction: 'ABOUT US'
   },
@@ -18,7 +18,7 @@ const slides = [
     titleFirst: 'World-Class ',
     titleHighlight: 'Hotel Support.',
     desc: 'Over 30 years of specialized expertise in luxury housekeeping, catering, facilities maintenance, and concierge management across 150+ top properties.',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80',
+    image: '/images/housekeeping_hero.jpg',
     primaryAction: 'OUR CLIENTS',
     secondaryAction: 'GET A QUOTE'
   },
@@ -28,7 +28,7 @@ const slides = [
     titleFirst: 'Seamless Guest ',
     titleHighlight: 'Experiences.',
     desc: 'Empowering 5-star hotel brands with rigorously trained hospitality professionals, sustainable practices, and strict quality control standards.',
-    image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1920&q=80',
+    image: '/images/catering_hero.jpg',
     primaryAction: 'EXPLORE SOLUTIONS',
     secondaryAction: 'CONTACT US'
   }

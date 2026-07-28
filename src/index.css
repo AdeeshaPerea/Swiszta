@@ -218,47 +218,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Logo */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.logo, .swiszta-brand-logo {
+  display: inline-flex;
+  align-items: flex-start;
   cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.logo-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3px;
-  width: 28px;
-  height: 28px;
-}
-
-.logo-sq {
-  background-color: var(--primary-red);
-  border-radius: 2px;
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.logo-brand {
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: var(--primary-red);
-  line-height: 1;
-}
-
-.logo-tagline {
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: #2D3748;
-  text-transform: uppercase;
-  margin-top: 2px;
+.swiszta-brand-logo:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
 }
 
 /* Nav Menu */
@@ -1468,6 +1437,66 @@ div:hover > .card-image-wrap img {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(200, 16, 46, 0.35) !important;
 }
+
+/* Comprehensive Mobile & Tablet Responsive Enhancements */
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none !important;
+  }
+  .mobile-toggle {
+    display: flex !important;
+  }
+  div[style*="gridTemplateColumns: 'repeat(6, 1fr)'"],
+  div[style*="grid-template-columns: repeat(6, 1fr)"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  div[style*="gridTemplateColumns: '1fr 1fr'"],
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  .footer-columns-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 32px !important;
+  }
+  .footer-col {
+    padding: 0 !important;
+    border-right: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-quote-btn {
+    display: none !important;
+  }
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  div[style*="gridTemplateColumns: 'repeat(6, 1fr)'"],
+  div[style*="grid-template-columns: repeat(6, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  div[style*="gridTemplateColumns: 'repeat(3, 1fr)'"],
+  div[style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  h1 {
+    font-size: 2.1rem !important;
+    line-height: 1.2 !important;
+  }
+  h2 {
+    font-size: 1.8rem !important;
+    line-height: 1.25 !important;
+  }
+  .hero-card-glass {
+    padding: 24px 18px !important;
+  }
+  .footer-columns-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+}
+
 
 
 
