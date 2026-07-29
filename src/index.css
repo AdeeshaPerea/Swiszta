@@ -1491,9 +1491,33 @@ div:hover > .card-image-wrap img {
   .hero-card-glass {
     padding: 24px 18px !important;
   }
-  .footer-columns-grid {
+}
+
+/* Services Overview Cards Grid Responsive Layout */
+.services-overview-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1200px) {
+  .services-overview-cards-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-overview-cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .services-overview-cards-grid {
     grid-template-columns: 1fr !important;
-    gap: 28px !important;
+    gap: 20px !important;
   }
 }
 

@@ -13,10 +13,17 @@ export default function AboutSection({ onNavigate, onOpenVideo, onOpenQuote }) {
 
   const leaders = [
     {
-      name: 'Jason Neville',
+      name: 'Natasha McGrath',
       role: 'Chief Executive Officer',
-      image: '/images/team/jeson neville.png',
-      bio: 'Visionary leader with over 25 years of experience in healthcare and hospitality operations across Australia.',
+      image: '/images/team/natasha mcgrath.png',
+      bio: 'Visionary Chief Executive Officer driving strategic direction, operational excellence, and transformative growth across SWISZTA hospitality operations.',
+      linkedin: 'https://linkedin.com'
+    },
+    {
+      name: 'Peter Pitchers',
+      role: 'General Manager',
+      image: '/images/team/peter pitchers.png',
+      bio: 'Experienced senior executive driving operational strategy, team leadership, and executive hospitality service management across all divisions.',
       linkedin: 'https://linkedin.com'
     },
     {
@@ -34,17 +41,24 @@ export default function AboutSection({ onNavigate, onOpenVideo, onOpenQuote }) {
       linkedin: 'https://linkedin.com'
     },
     {
-      name: 'Glen Fernando',
-      role: 'Chairman',
-      image: '/images/team/gelen fernado.png',
-      bio: 'Entrepreneur and strategic leader with over 30 years of experience in building and managing successful businesses.',
+      name: 'Markus Williams',
+      role: 'National Service Manager',
+      image: '/images/team/markus williams.png',
+      bio: 'National service operations leader dedicated to ensuring service excellence, client satisfaction, and operational efficiency across all properties.',
       linkedin: 'https://linkedin.com'
     },
     {
       name: 'Danny Fernandez',
-      role: 'National Operations Manager',
+      role: 'Head of Assets',
       image: '/images/team/danny fernadez.png',
-      bio: 'Operations expert ensuring consistent service delivery, quality and performance across all regions.',
+      bio: 'Asset management expert overseeing property assets, equipment lifecycle, procurement, and facility maintenance standards across all regions.',
+      linkedin: 'https://linkedin.com'
+    },
+    {
+      name: 'Vivien Leong',
+      role: 'General Manager',
+      image: '/images/team/vivien leong.png',
+      bio: 'Accomplished hospitality executive specializing in strategic management, operational excellence, and luxury guest service standards.',
       linkedin: 'https://linkedin.com'
     }
   ];

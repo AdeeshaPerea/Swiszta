@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function WatermarkOverlay({ text = "PREVIEW MODE • DEMO VERSION • SWISZTA" }) {
+export default function WatermarkOverlay({ text = "PREVIEW MODE • DEMO VERSION • SWISZTA™" }) {
   return (
     <div 
       style={{

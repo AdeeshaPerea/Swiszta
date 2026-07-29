@@ -43,6 +43,7 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
           variant="light" 
           size="md" 
           showTagline={true} 
+          showIcon={true}
           onClick={() => handleNavClick('home')} 
         />
 

@@ -123,7 +123,7 @@ export default function ServicesPage({ initialSubView = 'overview', onOpenQuote,
           {/* 2. 6 Service Image Cards Grid */}
           <section style={{ padding: '60px 0 80px' }}>
             <div className="container">
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '16px' }}>
+              <div className="services-overview-cards-grid">
                 {mainServicesList.map((svc) => {
                   const IconComp = svc.icon;
                   return (
@@ -137,7 +137,7 @@ export default function ServicesPage({ initialSubView = 'overview', onOpenQuote,
                         boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
                         display: 'flex',
                         flexDirection: 'column',
-                        justify: 'space-between',
+                        justifyContent: 'space-between',
                         transition: 'transform 0.3s ease, box-shadow 0.3s ease'
                       }}
                       onMouseEnter={(e) => {
@@ -150,7 +150,7 @@ export default function ServicesPage({ initialSubView = 'overview', onOpenQuote,
                       }}
                     >
                       {/* Image Top with Floating Icon */}
-                      <div style={{ position: 'relative', height: '140px' }}>
+                      <div style={{ position: 'relative', height: '150px' }}>
                         <img 
                           src={svc.image} 
                           alt={svc.title} 
@@ -159,32 +159,42 @@ export default function ServicesPage({ initialSubView = 'overview', onOpenQuote,
                         <div 
                           style={{
                             position: 'absolute',
-                            bottom: '-20px',
+                            bottom: '-22px',
                             left: '50%',
                             transform: 'translateX(-50%)',
-                            width: '42px',
-                            height: '42px',
+                            width: '44px',
+                            height: '44px',
                             borderRadius: '50%',
                             background: '#FFFFFF',
                             border: '1px solid #E5E9EC',
                             color: '#C8102E',
                             display: 'flex',
                             alignItems: 'center',
-                            justify: 'center',
-                            boxShadow: '0 4px 10px rgba(0,0,0,0.08)'
+                            justifyContent: 'center',
+                            boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
                           }}
                         >
-                          <IconComp size={20} />
+                          <IconComp size={22} />
                         </div>
                       </div>
 
                       {/* Content */}
-                      <div style={{ padding: '32px 14px 20px', textAlign: 'center', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                      <div style={{ padding: '36px 16px 20px', textAlign: 'center', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                         <div>
-                          <h3 style={{ fontSize: '0.94rem', fontWeight: 800, color: '#1E252B', marginBottom: '8px' }}>
+                          <h3 style={{ 
+                            fontSize: '0.98rem', 
+                            fontWeight: 800, 
+                            color: '#1E252B', 
+                            marginBottom: '8px',
+                            minHeight: '44px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            lineHeight: '1.25'
+                          }}>
                             {svc.title}
                           </h3>
-                          <p style={{ fontSize: '0.76rem', color: '#718096', lineHeight: '1.45', marginBottom: '16px' }}>
+                          <p style={{ fontSize: '0.78rem', color: '#718096', lineHeight: '1.45', marginBottom: '16px' }}>
                             {svc.desc}
                           </p>
                         </div>
@@ -194,11 +204,11 @@ export default function ServicesPage({ initialSubView = 'overview', onOpenQuote,
                             background: 'none', 
                             border: 'none', 
                             color: '#C8102E', 
-                            fontSize: '0.78rem', 
+                            fontSize: '0.8rem', 
                             fontWeight: 800, 
                             display: 'inline-flex', 
                             alignItems: 'center', 
-                            justify: 'center', 
+                            justifyContent: 'center', 
                             gap: '4px',
                             cursor: 'pointer',
                             padding: '4px 0'

@@ -15,6 +15,7 @@ export default function Footer({ onNavigate }) {
                 variant="dark" 
                 size="md" 
                 showTagline={true} 
+                showIcon={true}
                 onClick={() => onNavigate('home')} 
               />
             </div>
@@ -217,7 +218,7 @@ export default function Footer({ onNavigate }) {
         {/* Footer Bottom Bar */}
         <div className="footer-bottom-bar">
           <div>
-            © 2024 SWISZTA Hotel & Hospitality Services. All Rights Reserved.
+            © 2024 SWISZTA™ Hotel & Hospitality Services. All Rights Reserved.
           </div>
           <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
             <a href="#privacy" onClick={(e) => { e.preventDefault(); alert('Privacy Policy: SWISZTA values your data privacy.'); }} style={{ color: '#A0AEC0' }}>
