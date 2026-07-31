@@ -20,6 +20,7 @@ import ServiceDetailModal from './components/ServiceDetailModal';
 import ClientsModal from './components/ClientsModal';
 
 /* Pages */
+import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import SolutionsPage from './pages/SolutionsPage';
 import CareersPage from './pages/CareersPage';
@@ -35,17 +36,9 @@ export default function App() {
   const [selectedService, setSelectedService] = useState(null);
 
   const handleNavigate = (page, subview = 'overview') => {
-    if (page === 'about') {
-      setActivePage('home');
-      setTimeout(() => {
-        const el = document.getElementById('about');
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 50);
-    } else {
-      setActiveServiceSubView(subview);
-      setActivePage(page);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    setActiveServiceSubView(subview);
+    setActivePage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -91,6 +84,10 @@ export default function App() {
               onOpenQuote={() => setIsQuoteOpen(true)}
             />
           </>
+        )}
+
+        {activePage === 'about' && (
+          <AboutPage onOpenQuote={() => setIsQuoteOpen(true)} />
         )}
 
         {activePage === 'services' && (

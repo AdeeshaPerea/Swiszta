@@ -34,10 +34,16 @@ html {
   font-family: var(--font-body);
   color: var(--text-dark);
   background-color: #FAFAFA;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
-body {
-  overflow-x: hidden;
+body, #root, .app-root {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  position: relative;
   line-height: 1.5;
 }
 
@@ -235,22 +241,23 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 18px;
   list-style: none;
 }
 
 .nav-link {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.84rem;
-  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
   color: var(--text-dark);
   padding: 28px 0;
   position: relative;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
+  white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -458,6 +465,28 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   border: 1px solid var(--border-light);
+}
+
+@media (max-width: 1100px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .services-bar-wrapper {
+    margin-top: -30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 420px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .service-card {
@@ -1553,6 +1582,115 @@ div:hover > .card-image-wrap img {
   .services-overview-cards-grid {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
+  }
+}
+
+/* ------------------------------------------------------------- */
+/* MASTER DESKTOP vs MOBILE RESPONSIVE ENGINE                    */
+/* ------------------------------------------------------------- */
+
+/* 1. Desktop Default (min-width: 993px): Hamburger hidden, Nav Menu visible */
+.mobile-toggle {
+  display: none !important;
+}
+
+@media (min-width: 993px) {
+  .nav-menu {
+    display: flex !important;
+  }
+  .mobile-toggle {
+    display: none !important;
+  }
+}
+
+/* 2. Mobile & Tablet (max-width: 992px): Hamburger shown, Nav Menu hidden */
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none !important;
+  }
+  .mobile-toggle {
+    display: flex !important;
+  }
+
+  div[style*="gridTemplateColumns: 'repeat(3, 1fr)'"],
+  div[style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  div[style*="gridTemplateColumns: '1.2fr 1fr'"],
+  div[style*="grid-template-columns: 1.2fr 1fr"],
+  div[style*="gridTemplateColumns: '1fr 1.35fr'"],
+  div[style*="grid-template-columns: 1fr 1.35fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 3. Small Mobile Devices (max-width: 640px) */
+@media (max-width: 640px) {
+  .header-quote-btn {
+    display: none !important;
+  }
+  
+  .hero-section {
+    min-height: 480px !important;
+    max-height: none !important;
+    height: auto !important;
+    padding: 36px 0 44px !important;
+  }
+
+  .hero-content-wrapper {
+    max-width: 100% !important;
+    text-align: left !important;
+  }
+
+  .hero-title {
+    font-size: 2.1rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .hero-badge-line {
+    font-size: 0.72rem !important;
+    letter-spacing: 1.2px !important;
+  }
+
+  .hero-desc {
+    font-size: 0.92rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hero-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .hero-actions .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .hero-nav-btn {
+    display: none !important;
+  }
+
+  div[style*="gridTemplateColumns: 'repeat(3, 1fr)'"],
+  div[style*="grid-template-columns: repeat(3, 1fr)"],
+  div[style*="gridTemplateColumns: 'repeat(2, 1fr)'"],
+  div[style*="grid-template-columns: repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.25 !important;
+  }
+
+  h2 {
+    font-size: 1.65rem !important;
+    line-height: 1.25 !important;
   }
 }
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { CheckCircle2, ChevronRight, ShieldCheck, Star, Users, Handshake, Leaf, UserCheck, Play } from 'lucide-react';
-import LeadershipTree from './LeadershipTree';
 
 export default function AboutSection({ onNavigate, onOpenVideo, onOpenQuote }) {
   const milestones = [
@@ -325,10 +324,7 @@ export default function AboutSection({ onNavigate, onOpenVideo, onOpenQuote }) {
         </div>
       </div>
 
-      {/* 3. OUR LEADERSHIP TEAM Section (Animated Org Tree) */}
-      <LeadershipTree />
-
-      {/* 4. OUR VALUES Section (Redesigned Rich Dark Layout with 2-Line Heading & Image) */}
+      {/* 3. OUR VALUES Section (Redesigned Rich Dark Layout with 2-Line Heading & Image) */}
       <div style={{ backgroundColor: '#0B0F17', color: '#FFFFFF', padding: '56px 0', borderTop: '2px solid rgba(255, 42, 75, 0.4)', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', position: 'relative', overflow: 'hidden' }}>
         
         {/* Subtle Ambient Red Glow */}

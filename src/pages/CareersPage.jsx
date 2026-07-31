@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Briefcase, MapPin, Clock, Send, CheckCircle2, ChevronRight, Award, Users, Heart, GraduationCap, ShieldCheck, Sparkles } from 'lucide-react';
+import LeadershipTree from '../components/LeadershipTree';
 
 export default function CareersPage() {
   const [activeFilter, setActiveFilter] = useState('ALL');
@@ -360,6 +361,11 @@ export default function CareersPage() {
           )}
 
         </div>
+      </div>
+
+      {/* Leadership Section */}
+      <div style={{ backgroundColor: '#F8FAFC', borderTop: '1px solid #E2E8F0', padding: '20px 0' }}>
+        <LeadershipTree />
       </div>
 
     </div>

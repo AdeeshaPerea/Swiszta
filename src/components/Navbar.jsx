@@ -58,6 +58,15 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
               HOME
             </a>
           </li>
+          <li>
+            <a 
+              href="#about" 
+              className={`nav-link ${activePage === 'about' ? 'active' : ''}`}
+              onClick={(e) => { e.preventDefault(); handleNavClick('about'); }}
+            >
+              ABOUT US
+            </a>
+          </li>
           <li 
             style={{ position: 'relative' }}
             onMouseEnter={() => setServicesDropdown(true)}
@@ -208,7 +217,6 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
               cursor: 'pointer',
               padding: '6px',
               color: '#1E252B',
-              display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               outline: 'none'
@@ -253,6 +261,26 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
               onClick={(e) => { e.preventDefault(); handleNavClick('home'); }}
             >
               <span>HOME</span>
+              <ChevronRight size={18} style={{ opacity: 0.4 }} />
+            </a>
+          </div>
+
+          {/* ABOUT US */}
+          <div style={{ borderBottom: '1px solid #F0F4F8', paddingBottom: '10px' }}>
+            <a
+              href="#about"
+              style={{
+                fontSize: '1.05rem',
+                fontWeight: 800,
+                color: activePage === 'about' ? '#C8102E' : '#1E252B',
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between'
+              }}
+              onClick={(e) => { e.preventDefault(); handleNavClick('about'); }}
+            >
+              <span>ABOUT US</span>
               <ChevronRight size={18} style={{ opacity: 0.4 }} />
             </a>
           </div>
