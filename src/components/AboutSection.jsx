@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle2, ChevronRight, ShieldCheck, Star, Users, Handshake, Leaf, UserCheck, Play } from 'lucide-react';
+import LeadershipTree from './LeadershipTree';
 
 export default function AboutSection({ onNavigate, onOpenVideo, onOpenQuote }) {
   const milestones = [
@@ -9,58 +10,6 @@ export default function AboutSection({ onNavigate, onOpenVideo, onOpenQuote }) {
     { number: '12', label: 'Regions', desc: 'Nationwide presence across major cities and regional areas.' },
     { number: '2,000+', label: 'People', desc: 'A dedicated team of hospitality professionals and experts.' },
     { number: '98%', label: 'Client Retention', desc: 'Long-term partnerships built on trust, quality and results.' }
-  ];
-
-  const leaders = [
-    {
-      name: 'Natasha McGrath',
-      role: 'Chief Executive Officer',
-      image: '/images/team/natasha mcgrath.png',
-      bio: 'Visionary Chief Executive Officer driving strategic direction, operational excellence, and transformative growth across SWISZTA hospitality operations.',
-      linkedin: 'https://linkedin.com'
-    },
-    {
-      name: 'Peter Pitchers',
-      role: 'General Manager',
-      image: '/images/team/peter pitchers.png',
-      bio: 'Experienced senior executive driving operational strategy, team leadership, and executive hospitality service management across all divisions.',
-      linkedin: 'https://linkedin.com'
-    },
-    {
-      name: 'Robert Di Giulio',
-      role: 'Head of Growth & Client Retention',
-      image: '/images/team/robert di giulio.png',
-      bio: 'Leads business growth and client relationships with a focus on strategic partnerships and long-term value creation.',
-      linkedin: 'https://linkedin.com'
-    },
-    {
-      name: 'Deshani Gomas',
-      role: 'Chief Financial Officer',
-      image: '/images/team/Deshani gomas.png',
-      bio: 'Finance leader focused on sustainable growth, governance and delivering strong financial performance.',
-      linkedin: 'https://linkedin.com'
-    },
-    {
-      name: 'Markus Williams',
-      role: 'National Service Manager',
-      image: '/images/team/markus williams.png',
-      bio: 'National service operations leader dedicated to ensuring service excellence, client satisfaction, and operational efficiency across all properties.',
-      linkedin: 'https://linkedin.com'
-    },
-    {
-      name: 'Danny Fernandez',
-      role: 'Head of Assets',
-      image: '/images/team/danny fernadez.png',
-      bio: 'Asset management expert overseeing property assets, equipment lifecycle, procurement, and facility maintenance standards across all regions.',
-      linkedin: 'https://linkedin.com'
-    },
-    {
-      name: 'Vivien Leong',
-      role: 'General Manager',
-      image: '/images/team/vivien leong.png',
-      bio: 'Accomplished hospitality executive specializing in strategic management, operational excellence, and luxury guest service standards.',
-      linkedin: 'https://linkedin.com'
-    }
   ];
 
   const timelineSteps = [
@@ -82,242 +31,302 @@ export default function AboutSection({ onNavigate, onOpenVideo, onOpenQuote }) {
   ];
 
   return (
-    <section id="about" style={{ backgroundColor: '#FAFAFA', paddingTop: '64px', paddingBottom: '32px' }}>
+    <section id="about" style={{ backgroundColor: '#FAFAFA', paddingTop: '0px', paddingBottom: '32px' }}>
       
-      {/* 1. Who We Are & Our Milestones Grid */}
-      <div className="container" style={{ paddingBottom: '64px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: '48px', alignItems: 'start' }}>
-          
-          {/* Left: Who We Are */}
-          <div>
-            <div style={{ fontSize: '0.82rem', fontWeight: 800, letterSpacing: '1.5px', color: '#C8102E', textTransform: 'uppercase', marginBottom: '12px' }}>
-              — WHO WE ARE
-            </div>
-            <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#1E252B', lineHeight: 1.2, marginBottom: '20px' }}>
-              We're Passionate About Hospitality. And It Shows.
-            </h2>
-            <p style={{ fontSize: '0.95rem', color: '#4A5568', lineHeight: 1.6, marginBottom: '24px' }}>
-              SWISZTA is a leading provider of integrated hotel and hospitality services across Australia. From housekeeping to maintenance, catering to concierge, we deliver tailored solutions that enhance guest satisfaction and elevate your brand.
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '24px' }}>
-              {['Proudly Australian Owned', 'Industry Experts & Hospitality Specialists', 'Commitment to Quality, Safety & Sustainability', 'People Focused, Performance Driven'].map((item, idx) => (
-                <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', fontWeight: 700, color: '#1E252B' }}>
-                  <CheckCircle2 size={18} style={{ color: '#C8102E', flexShrink: 0 }} />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
+      {/* 1. Who We Are & Our Milestones Grid WITH BALANCED BACKGROUND VIDEO */}
+      <div 
+        style={{
+          position: 'relative',
+          padding: '80px 0',
+          overflow: 'hidden',
+          backgroundColor: '#0A0E17',
+          color: '#FFFFFF'
+        }}
+      >
+        {/* YouTube Background Video Container (Balanced 68% Opacity) */}
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          width: '120%',
+          height: '140%',
+          transform: 'translate(-50%, -50%)',
+          pointerEvents: 'none',
+          zIndex: 0,
+          opacity: 0.68 // Reduced slightly for a balanced, elegant background video look
+        }}>
+          <iframe
+            src="https://www.youtube.com/embed/Am6-Kg_Fjgs?autoplay=1&mute=1&controls=0&loop=1&playlist=Am6-Kg_Fjgs&playsinline=1&enablejsapi=1&rel=0"
+            title="SWISZTA Corporate Background Video"
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
+          />
+        </div>
 
-            {/* Video Play Trigger Box */}
-            <div style={{ position: 'relative', height: '180px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' }}>
-              <img 
-                src="/images/reception_frontdesk.jpg" 
-                alt="SWISZTA Front Desk Receptionist Assisting Hotel Guest" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
+        {/* Smooth Dark Overlay */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'linear-gradient(135deg, rgba(10, 14, 23, 0.48) 0%, rgba(5, 8, 15, 0.42) 100%)',
+          zIndex: 1
+        }} />
+
+        {/* Content Layer */}
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '52px', alignItems: 'center' }}>
+            
+            {/* Left Column: Who We Are */}
+            <div>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontSize: '0.82rem',
+                fontWeight: 900,
+                letterSpacing: '2px',
+                color: '#FF2A4B',
+                backgroundColor: 'rgba(10, 14, 23, 0.75)',
+                padding: '6px 16px',
+                borderRadius: '20px',
+                border: '1px solid rgba(255, 42, 75, 0.4)',
+                textTransform: 'uppercase',
+                marginBottom: '16px',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.5)'
+              }}>
+                — WHO WE ARE
+              </div>
+              
+              <h2 style={{
+                fontSize: '2.5rem',
+                fontWeight: 900,
+                color: '#FFFFFF',
+                lineHeight: 1.2,
+                marginBottom: '20px',
+                textShadow: '0 3px 12px rgba(0, 0, 0, 0.9), 0 1px 3px rgba(0,0,0,0.9)'
+              }}>
+                We're Passionate About Hospitality. <span style={{ color: '#FF2A4B' }}>And It Shows.</span>
+              </h2>
+
+              <p style={{
+                fontSize: '1rem',
+                color: '#F8FAFC',
+                lineHeight: 1.65,
+                marginBottom: '28px',
+                textShadow: '0 2px 8px rgba(0, 0, 0, 0.9)',
+                fontWeight: 600
+              }}>
+                SWISZTA is a leading provider of integrated hotel and hospitality services across Australia. From housekeeping to maintenance, catering to concierge, we deliver tailored solutions that enhance guest satisfaction and elevate your brand.
+              </p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '32px' }}>
+                {[
+                  'Proudly Australian Owned',
+                  'Industry Experts & Hospitality Specialists',
+                  'Commitment to Quality, Safety & Sustainability',
+                  'People Focused, Performance Driven'
+                ].map((item, idx) => (
+                  <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '0.94rem', fontWeight: 800, color: '#FFFFFF', textShadow: '0 2px 6px rgba(0,0,0,0.9)' }}>
+                    <CheckCircle2 size={20} style={{ color: '#FF2A4B', flexShrink: 0, filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.8))' }} />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Watch Corporate Video Button */}
               <button 
                 onClick={onOpenVideo} 
                 style={{
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  width: '56px',
-                  height: '56px',
-                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  padding: '14px 28px',
+                  borderRadius: '30px',
                   backgroundColor: '#C8102E',
                   color: '#FFFFFF',
                   border: 'none',
+                  fontSize: '0.92rem',
+                  fontWeight: 800,
                   cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  boxShadow: '0 4px 16px rgba(200, 16, 46, 0.4)'
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.6), 0 4px 16px rgba(200, 16, 46, 0.5)',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px) scale(1.03)';
+                  e.currentTarget.style.boxShadow = '0 12px 32px rgba(200, 16, 46, 0.7)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.6)';
                 }}
               >
-                <Play size={24} style={{ marginLeft: '4px', fill: 'currentColor' }} />
+                <div style={{
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '50%',
+                  backgroundColor: '#FFFFFF',
+                  color: '#C8102E',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <Play size={16} style={{ marginLeft: '2px', fill: 'currentColor' }} />
+                </div>
+                WATCH CORPORATE VIDEO
               </button>
             </div>
-          </div>
 
-          {/* Right: Our Milestones 6-Stat Grid */}
-          <div>
-            <div style={{ fontSize: '0.82rem', fontWeight: 800, letterSpacing: '1.5px', color: '#C8102E', textTransform: 'uppercase', marginBottom: '16px' }}>
-              — OUR MILESTONES
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
-              {milestones.map((m, idx) => (
-                <div 
-                  key={idx}
-                  style={{
-                    backgroundColor: '#FFFFFF',
-                    borderRadius: '12px',
-                    border: '1px solid #E2E8F0',
-                    padding: '24px 18px',
-                    textAlign: 'center',
-                    boxShadow: '0 4px 16px rgba(0,0,0,0.03)'
-                  }}
-                >
-                  <div style={{ fontSize: '2.2rem', fontWeight: 900, color: '#C8102E', lineHeight: 1, marginBottom: '6px' }}>
-                    {m.number}
-                  </div>
-                  <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#1E252B', marginBottom: '8px' }}>
-                    {m.label}
-                  </div>
-                  <p style={{ fontSize: '0.78rem', color: '#657380', lineHeight: 1.4 }}>
-                    {m.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+            {/* Right Column: High-Contrast Milestone Cards */}
+            <div>
+              <div style={{
+                display: 'inline-block',
+                fontSize: '0.82rem',
+                fontWeight: 900,
+                letterSpacing: '2px',
+                color: '#FF2A4B',
+                backgroundColor: 'rgba(10, 14, 23, 0.75)',
+                padding: '6px 16px',
+                borderRadius: '20px',
+                border: '1px solid rgba(255, 42, 75, 0.4)',
+                textTransform: 'uppercase',
+                marginBottom: '18px',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.5)'
+              }}>
+                — OUR MILESTONES
+              </div>
 
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px' }}>
+                {milestones.map((m, idx) => (
+                  <div 
+                    key={idx}
+                    style={{
+                      backgroundColor: 'rgba(15, 23, 42, 0.68)',
+                      backdropFilter: 'blur(8px)',
+                      borderRadius: '16px',
+                      border: '1px solid rgba(255, 255, 255, 0.22)',
+                      padding: '24px 16px',
+                      textAlign: 'center',
+                      boxShadow: '0 10px 32px rgba(0, 0, 0, 0.5)',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-4px)';
+                      e.currentTarget.style.borderColor = '#FF2A4B';
+                      e.currentTarget.style.backgroundColor = 'rgba(15, 23, 42, 0.85)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.22)';
+                      e.currentTarget.style.backgroundColor = 'rgba(15, 23, 42, 0.68)';
+                    }}
+                  >
+                    <div style={{ fontSize: '2.4rem', fontWeight: 900, color: '#FF2A4B', lineHeight: 1, marginBottom: '8px', textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
+                      {m.number}
+                    </div>
+                    <div style={{ fontSize: '0.94rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '8px', textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>
+                      {m.label}
+                    </div>
+                    <p style={{ fontSize: '0.82rem', color: '#E2E8F0', lineHeight: 1.45, margin: 0, fontWeight: 500 }}>
+                      {m.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
-      {/* 2. OUR LEADERSHIP TEAM Section */}
-      <div style={{ backgroundColor: '#FFFFFF', padding: '72px 0 84px', borderTop: '1px solid #E5E9EC', borderBottom: '1px solid #E5E9EC' }}>
+      {/* 2. OUR JOURNEY Timeline Section */}
+      <div style={{ backgroundColor: '#F8FAFC', padding: '72px 0', borderTop: '1px solid #E5E9EC', borderBottom: '1px solid #E5E9EC' }}>
         <div className="container">
-          
-          {/* Header */}
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 52px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', fontWeight: 800, letterSpacing: '2px', color: '#1E252B', textTransform: 'uppercase', marginBottom: '12px' }}>
+          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 48px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '2px', color: '#C8102E', textTransform: 'uppercase', marginBottom: '10px' }}>
               <span style={{ width: '8px', height: '8px', backgroundColor: '#C8102E', transform: 'rotate(45deg)', display: 'inline-block' }}></span>
-              OUR LEADERSHIP TEAM
+              OUR JOURNEY
               <span style={{ width: '8px', height: '8px', backgroundColor: '#C8102E', transform: 'rotate(45deg)', display: 'inline-block' }}></span>
             </div>
-            
-            <h2 style={{ fontSize: '2.6rem', fontWeight: 800, color: '#1E252B', marginBottom: '16px' }}>
-              Experienced Leaders. <span style={{ color: '#C8102E' }}>Exceptional Results.</span>
+            <h2 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#1E252B', marginBottom: '14px' }}>
+              A Legacy of Growth <span style={{ color: '#C8102E' }}>and Trust</span>
             </h2>
-
-            <p style={{ fontSize: '0.98rem', color: '#4A5568', lineHeight: 1.6 }}>
-              Our leadership team brings together decades of experience in hospitality, facility services and operations. United by a shared passion for excellence, we lead with integrity, collaborate with purpose and deliver outstanding outcomes for our clients and communities.
+            <p style={{ fontSize: '0.95rem', color: '#657380', lineHeight: 1.6 }}>
+              From our humble beginnings to becoming a trusted hospitality partner nationwide, explore our milestone moments over the years.
             </p>
           </div>
 
-          {/* 5 Leadership Cards Row */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '20px' }}>
-            {leaders.map((leader, idx) => (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+            {timelineSteps.map((step, idx) => (
               <div 
                 key={idx}
                 style={{
                   backgroundColor: '#FFFFFF',
-                  borderRadius: '12px',
+                  borderRadius: '16px',
                   border: '1px solid #E2E8F0',
                   overflow: 'hidden',
-                  boxShadow: '0 6px 20px rgba(0,0,0,0.04)',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.05)',
                   display: 'flex',
                   flexDirection: 'column',
-                  textAlign: 'center',
-                  transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 12px 28px rgba(0,0,0,0.1)';
+                  e.currentTarget.style.transform = 'translateY(-6px)';
+                  e.currentTarget.style.boxShadow = '0 16px 36px rgba(0,0,0,0.12)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.04)';
+                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.05)';
                 }}
               >
-                {/* Photo */}
-                <div style={{ height: '220px', backgroundColor: '#EDF2F7', overflow: 'hidden' }}>
+                {/* Large Photo Header with Floating Year Badge */}
+                <div style={{ position: 'relative', height: '190px', overflow: 'hidden' }}>
                   <img 
-                    src={leader.image} 
-                    alt={leader.name} 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
+                    src={step.image} 
+                    alt={step.title} 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
+                  <div style={{
+                    position: 'absolute',
+                    top: '14px',
+                    left: '14px',
+                    backgroundColor: '#C8102E',
+                    color: '#FFFFFF',
+                    fontSize: '0.92rem',
+                    fontWeight: 900,
+                    padding: '6px 16px',
+                    borderRadius: '30px',
+                    boxShadow: '0 4px 12px rgba(200, 16, 46, 0.4)',
+                    letterSpacing: '0.5px'
+                  }}>
+                    {step.year}
+                  </div>
                 </div>
 
-                {/* Info */}
-                <div style={{ padding: '20px 16px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1E252B', marginBottom: '4px' }}>
-                    {leader.name}
+                {/* Content */}
+                <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1E252B', marginBottom: '10px' }}>
+                    {step.title}
                   </h3>
-                  <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#C8102E', marginBottom: '12px' }}>
-                    {leader.role}
-                  </div>
-                  <p style={{ fontSize: '0.8rem', color: '#657380', lineHeight: 1.45, marginBottom: '18px', flex: 1 }}>
-                    {leader.bio}
+                  <p style={{ fontSize: '0.88rem', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
+                    {step.desc}
                   </p>
-
-                  {/* LinkedIn Icon Button */}
-                  <div style={{ marginTop: 'auto' }}>
-                    <a 
-                      href={leader.linkedin} 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: '28px',
-                        height: '28px',
-                        borderRadius: '4px',
-                        border: '1px solid #C8102E',
-                        color: '#C8102E',
-                        fontSize: '0.72rem',
-                        fontWeight: 800,
-                        textDecoration: 'none'
-                      }}
-                    >
-                      in
-                    </a>
-                  </div>
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </div>
 
-      {/* 3. OUR JOURNEY Timeline */}
-      <div className="container" style={{ padding: '72px 24px' }}>
-        <div style={{ fontSize: '0.82rem', fontWeight: 800, letterSpacing: '1.5px', color: '#C8102E', textTransform: 'uppercase', marginBottom: '8px' }}>
-          — OUR JOURNEY
-        </div>
-        <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#1E252B', marginBottom: '36px' }}>
-          A Legacy of Growth and Trust
-        </h2>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '16px' }}>
-          {timelineSteps.map((step, idx) => (
-            <div 
-              key={idx}
-              style={{
-                backgroundColor: '#FFFFFF',
-                borderRadius: '10px',
-                border: '1px solid #E2E8F0',
-                overflow: 'hidden',
-                boxShadow: '0 4px 14px rgba(0,0,0,0.03)',
-                display: 'flex',
-                flexDirection: 'column'
-              }}
-            >
-              <div style={{ padding: '14px 14px 0' }}>
-                <div style={{ fontSize: '1.1rem', fontWeight: 900, color: '#C8102E', marginBottom: '2px' }}>
-                  {step.year}
-                </div>
-                <h4 style={{ fontSize: '0.85rem', fontWeight: 800, color: '#1E252B', marginBottom: '6px' }}>
-                  {step.title}
-                </h4>
-                <p style={{ fontSize: '0.74rem', color: '#657380', lineHeight: 1.35, minHeight: '60px' }}>
-                  {step.desc}
-                </p>
-              </div>
-              <div style={{ height: '90px', marginTop: '12px' }}>
-                <img 
-                  src={step.image} 
-                  alt={step.title} 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* 3. OUR LEADERSHIP TEAM Section (Animated Org Tree) */}
+      <LeadershipTree />
 
       {/* 4. OUR VALUES Section */}
       <div style={{ backgroundColor: '#FFFFFF', padding: '64px 0', borderTop: '1px solid #E5E9EC' }}>

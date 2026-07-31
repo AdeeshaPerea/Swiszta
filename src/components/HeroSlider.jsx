@@ -5,7 +5,7 @@ const slides = [
   {
     id: 1,
     badge: 'CARE. COMFORT. EXCELLENCE.',
-    titleFirst: 'Elevating Hospitality ',
+    titleFirst: 'Elevating Hospitality',
     titleHighlight: 'Every Day.',
     desc: 'SWISZTA delivers integrated hospitality solutions that enhance guest satisfaction and operational excellence across hotels and premium properties.',
     image: '/images/concierge_hero.jpg',
@@ -15,7 +15,7 @@ const slides = [
   {
     id: 2,
     badge: 'PREMIUM QUALITY & RELIABILITY',
-    titleFirst: 'World-Class ',
+    titleFirst: 'World-Class',
     titleHighlight: 'Hotel Support.',
     desc: 'Over 30 years of specialized expertise in luxury housekeeping, catering, facilities maintenance, and concierge management across 150+ top properties.',
     image: '/images/housekeeping_hero.jpg',
@@ -25,7 +25,7 @@ const slides = [
   {
     id: 3,
     badge: 'TAILORED OPERATIONAL SOLUTIONS',
-    titleFirst: 'Seamless Guest ',
+    titleFirst: 'Seamless Guest',
     titleHighlight: 'Experiences.',
     desc: 'Empowering 5-star hotel brands with rigorously trained hospitality professionals, sustainable practices, and strict quality control standards.',
     image: '/images/catering_hero.jpg',
@@ -71,28 +71,35 @@ export default function HeroSlider({ onNavigate, onOpenQuote }) {
 
       <div className="container" style={{ position: 'relative', zIndex: 10 }}>
         <div className="hero-content-wrapper">
-          <div className="hero-card-glass">
-            <div className="hero-badge-line">
-              {slide.badge}
+          <div className="hero-badge-line">
+            {slide.badge}
+          </div>
+
+          <h1 className="hero-title">
+            {slide.titleFirst}
+            <span>{slide.titleHighlight}</span>
+          </h1>
+
+          <div className="hero-divider">
+            <div className="hero-divider-line"></div>
+            <div className="hero-divider-logo">
+              <span></span><span></span>
+              <span></span><span></span>
             </div>
+            <div className="hero-divider-line"></div>
+          </div>
 
-            <h1 className="hero-title">
-              {slide.titleFirst}
-              <span>{slide.titleHighlight}</span>
-            </h1>
+          <p className="hero-desc">
+            {slide.desc}
+          </p>
 
-            <p className="hero-desc">
-              {slide.desc}
-            </p>
-
-            <div className="hero-actions">
-              <button className="btn btn-red" onClick={handlePrimary}>
-                {slide.primaryAction} <ChevronRight size={16} />
-              </button>
-              <button className="btn btn-outline-white" onClick={handleSecondary}>
-                {slide.secondaryAction} <ChevronRight size={16} />
-              </button>
-            </div>
+          <div className="hero-actions">
+            <button className="btn btn-red" onClick={handlePrimary}>
+              {slide.primaryAction} <ChevronRight size={16} />
+            </button>
+            <button className="btn btn-outline-white" onClick={handleSecondary}>
+              {slide.secondaryAction} <ChevronRight size={16} />
+            </button>
           </div>
         </div>
       </div>

@@ -68,6 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Container */
 .container {
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 24px;
@@ -276,36 +277,39 @@ h1, h2, h3, h4, h5, h6 {
 /* Hero Section & Slider */
 .hero-section {
   position: relative;
-  min-height: 580px;
+  min-height: 560px;
+  height: calc(100vh - 120px);
+  max-height: 680px;
   background-size: cover;
   background-position: center;
   transition: background-image 0.6s ease-in-out;
   display: flex;
   align-items: center;
-  padding: 60px 0 140px;
+  padding: 40px 0 60px;
+  overflow: hidden;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(15, 20, 25, 0.85) 0%, rgba(15, 20, 25, 0.4) 60%, rgba(15, 20, 25, 0.15) 100%);
+  background: linear-gradient(90deg, rgba(32, 36, 40, 0.95) 0%, rgba(32, 36, 40, 0.88) 35%, rgba(32, 36, 40, 0.55) 58%, rgba(32, 36, 40, 0.1) 82%, rgba(32, 36, 40, 0) 100%);
 }
 
 .hero-content-wrapper {
   position: relative;
   z-index: 10;
-  max-width: 620px;
+  max-width: 580px;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .hero-card-glass {
-  background: rgba(22, 28, 34, 0.72);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 44px;
-  border-radius: var(--radius-md);
-  color: var(--bg-white);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
 }
 
 .hero-badge-line {
@@ -317,35 +321,65 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 2px;
   color: #E2E8F0;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .hero-badge-line::before {
   content: '';
-  width: 24px;
+  width: 32px;
   height: 2px;
   background-color: var(--primary-red);
 }
 
 .hero-title {
-  font-size: 3.1rem;
+  font-size: 3.5rem;
   font-weight: 800;
   color: var(--bg-white);
   line-height: 1.1;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   letter-spacing: -0.5px;
 }
 
 .hero-title span {
+  display: block;
   color: var(--primary-red);
+  margin-top: 2px;
+}
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 22px 0;
+  max-width: 480px;
+}
+
+.hero-divider-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.hero-divider-logo {
+  display: grid;
+  grid-template-columns: repeat(2, 6px);
+  gap: 2px;
+}
+
+.hero-divider-logo span {
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-red);
+  border-radius: 1px;
 }
 
 .hero-desc {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: #CBD5E0;
   margin-bottom: 32px;
-  line-height: 1.6;
+  line-height: 1.65;
   font-weight: 400;
+  max-width: 520px;
 }
 
 .hero-actions {
@@ -360,10 +394,10 @@ h1, h2, h3, h4, h5, h6 {
   top: 50%;
   transform: translateY(-50%);
   z-index: 20;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(8px);
   color: white;
   display: flex;
@@ -371,12 +405,12 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   transition: var(--transition-fast);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
 }
 
 .hero-nav-btn:hover {
   background: var(--primary-red);
   border-color: var(--primary-red);
-  transform: translateY(-50%) scale(1.08);
 }
 
 .hero-nav-btn.prev { left: 24px; }
@@ -384,27 +418,28 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-dots {
   position: absolute;
-  bottom: 110px;
+  bottom: 36px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
   cursor: pointer;
   transition: var(--transition-fast);
 }
 
 .dot.active {
   background: var(--primary-red);
-  width: 28px;
-  border-radius: 6px;
+  width: 12px;
+  height: 12px;
 }
 
 /* Floating Services Bar */

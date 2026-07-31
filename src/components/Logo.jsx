@@ -4,7 +4,7 @@ import React from 'react';
  * Official SWISZTA Logo Component
  * @param {string} variant - 'light' (default, black text) or 'dark' (white text for dark backgrounds)
  * @param {string} size - 'sm' | 'md' | 'lg'
- * @param {boolean} showTagline - whether to show "CARE. COMFORT. EXCELLENCE."
+ * @param {boolean} showIcon - whether to show the 2x2 grid icon
  * @param {string} className - extra CSS classes
  * @param {object} style - inline styles
  * @param {function} onClick - click event handler
@@ -12,7 +12,6 @@ import React from 'react';
 export default function Logo({
   variant = 'light',
   size = 'md',
-  showTagline = true,
   showIcon = true,
   className = '',
   style = {},
@@ -24,7 +23,6 @@ export default function Logo({
   const scale = size === 'sm' ? 0.75 : size === 'lg' ? 1.25 : 1;
 
   const textColor = isDark ? '#FFFFFF' : '#111111';
-  const taglineColor = isDark ? '#A0AEC0' : '#64748B';
 
   return (
     <div 
@@ -32,15 +30,14 @@ export default function Logo({
       onClick={onClick}
       style={{
         display: 'inline-flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
+        alignItems: 'center',
         cursor: onClick ? 'pointer' : 'default',
         userSelect: 'none',
         lineHeight: 1,
         ...style
       }}
     >
-      {/* Top Row: Brand Name SWISZTA™ (Icon Grid optional) */}
+      {/* Brand Name SWISZTA™ (Icon Grid optional) */}
       <div style={{ display: 'flex', alignItems: 'center', gap: `${10 * scale}px` }}>
         
         {/* 2x2 Square Icon Grid */}
@@ -59,7 +56,7 @@ export default function Logo({
           </svg>
         )}
 
-        {/* SWISZTA™ Typography */}
+        {/* SWISZTA™ Typography with Black TM */}
         <div style={{ display: 'flex', alignItems: 'baseline', fontFamily: 'Outfit, Inter, sans-serif', fontWeight: 800, fontSize: `${1.5 * scale}rem`, letterSpacing: '1px' }}>
           <span style={{ color: textColor }}>SWIS</span>
           <span style={{ color: '#EE1C25', display: 'inline-flex', alignItems: 'baseline' }}>
@@ -75,39 +72,9 @@ export default function Logo({
               <path d="M 4 22 L 12 4 L 20 22" stroke="#EE1C25" strokeWidth="4.2" strokeLinecap="round" strokeLinejoin="miter" />
             </svg>
           </span>
-          <sup style={{ color: '#EE1C25', fontSize: `${0.55 * scale}rem`, fontWeight: 700, marginLeft: '2px', position: 'relative', top: '-0.55em', lineHeight: 1 }}>TM</sup>
+          <sup style={{ color: textColor, fontSize: `${0.55 * scale}rem`, fontWeight: 800, marginLeft: '3px', position: 'relative', top: '-0.55em', lineHeight: 1 }}>TM</sup>
         </div>
       </div>
-
-      {/* Subtitle: HOTEL & HOSPITALITY SERVICES */}
-      <div style={{
-        marginTop: `${4 * scale}px`,
-        fontSize: `${0.62 * scale}rem`,
-        fontWeight: 700,
-        letterSpacing: `${2.2 * scale}px`,
-        color: textColor,
-        textTransform: 'uppercase',
-        fontFamily: 'Outfit, Inter, sans-serif',
-        whiteSpace: 'nowrap'
-      }}>
-        HOTEL &amp; HOSPITALITY SERVICES
-      </div>
-
-      {/* Tagline: CARE. COMFORT. EXCELLENCE. */}
-      {showTagline && (
-        <div style={{
-          marginTop: `${3 * scale}px`,
-          fontSize: `${0.52 * scale}rem`,
-          fontWeight: 600,
-          letterSpacing: `${2.8 * scale}px`,
-          color: taglineColor,
-          textTransform: 'uppercase',
-          fontFamily: 'Inter, sans-serif',
-          whiteSpace: 'nowrap'
-        }}>
-          CARE. COMFORT. EXCELLENCE.
-        </div>
-      )}
     </div>
   );
 }

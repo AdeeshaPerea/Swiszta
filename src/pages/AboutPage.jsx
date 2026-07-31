@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle2, Phone, Mail, MapPin, ChevronRight, ShieldCheck, Star, Users, Handshake, Leaf, UserCheck } from 'lucide-react';
+import LeadershipTree from '../components/LeadershipTree';
 
 export default function AboutPage({ onOpenQuote }) {
   const milestones = [
@@ -197,149 +198,87 @@ export default function AboutPage({ onOpenQuote }) {
         </div>
       </div>
 
-      {/* 3. Leadership Team Section */}
-      <div id="leadership-section" style={{ backgroundColor: '#FFFFFF', padding: '72px 0 84px', borderTop: '1px solid #E5E9EC', borderBottom: '1px solid #E5E9EC' }}>
+      {/* 3. Our Journey Timeline Section (Moved above Leadership Team) */}
+      <div style={{ backgroundColor: '#F8FAFC', padding: '72px 0', borderTop: '1px solid #E5E9EC', borderBottom: '1px solid #E5E9EC' }}>
         <div className="container">
-
-          {/* Header */}
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 52px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', fontWeight: 800, letterSpacing: '2px', color: '#1E252B', textTransform: 'uppercase', marginBottom: '12px' }}>
+          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 48px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '2px', color: '#C8102E', textTransform: 'uppercase', marginBottom: '10px' }}>
               <span style={{ width: '8px', height: '8px', backgroundColor: '#C8102E', transform: 'rotate(45deg)', display: 'inline-block' }}></span>
-              OUR LEADERSHIP TEAM
+              OUR JOURNEY
               <span style={{ width: '8px', height: '8px', backgroundColor: '#C8102E', transform: 'rotate(45deg)', display: 'inline-block' }}></span>
             </div>
-
-            <h2 style={{ fontSize: '2.6rem', fontWeight: 800, color: '#1E252B', marginBottom: '16px' }}>
-              Experienced Leaders. <span style={{ color: '#C8102E' }}>Exceptional Results.</span>
+            <h2 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#1E252B', marginBottom: '14px' }}>
+              A Legacy of Growth <span style={{ color: '#C8102E' }}>and Trust</span>
             </h2>
-
-            <p style={{ fontSize: '0.98rem', color: '#4A5568', lineHeight: 1.6 }}>
-              Our leadership team brings together decades of experience in hospitality, facility services and operations. United by a shared passion for excellence, we lead with integrity, collaborate with purpose and deliver outstanding outcomes for our clients and communities.
+            <p style={{ fontSize: '0.95rem', color: '#657380', lineHeight: 1.6 }}>
+              From our humble beginnings to becoming a trusted hospitality partner nationwide, explore our milestone moments over the years.
             </p>
           </div>
 
-          {/* 5 Leadership Cards Row */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '20px' }}>
-            {leaders.map((leader, idx) => (
-              <div
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+            {timelineSteps.map((step, idx) => (
+              <div 
                 key={idx}
                 style={{
                   backgroundColor: '#FFFFFF',
-                  borderRadius: '12px',
+                  borderRadius: '16px',
                   border: '1px solid #E2E8F0',
                   overflow: 'hidden',
-                  boxShadow: '0 6px 20px rgba(0,0,0,0.04)',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.05)',
                   display: 'flex',
                   flexDirection: 'column',
-                  textAlign: 'center',
-                  transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 12px 28px rgba(0,0,0,0.1)';
+                  e.currentTarget.style.transform = 'translateY(-6px)';
+                  e.currentTarget.style.boxShadow = '0 16px 36px rgba(0,0,0,0.12)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.04)';
+                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.05)';
                 }}
               >
-                {/* Photo */}
-                <div style={{ height: '220px', backgroundColor: '#EDF2F7', overflow: 'hidden' }}>
-                  <img
-                    src={leader.image}
-                    alt={leader.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
+                {/* Large Photo Header with Floating Year Badge */}
+                <div style={{ position: 'relative', height: '190px', overflow: 'hidden' }}>
+                  <img 
+                    src={step.image} 
+                    alt={step.title} 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
+                  <div style={{
+                    position: 'absolute',
+                    top: '14px',
+                    left: '14px',
+                    backgroundColor: '#C8102E',
+                    color: '#FFFFFF',
+                    fontSize: '0.92rem',
+                    fontWeight: 900,
+                    padding: '6px 16px',
+                    borderRadius: '30px',
+                    boxShadow: '0 4px 12px rgba(200, 16, 46, 0.4)',
+                    letterSpacing: '0.5px'
+                  }}>
+                    {step.year}
+                  </div>
                 </div>
 
-                {/* Info */}
-                <div style={{ padding: '20px 16px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1E252B', marginBottom: '4px' }}>
-                    {leader.name}
+                {/* Content */}
+                <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1E252B', marginBottom: '10px' }}>
+                    {step.title}
                   </h3>
-                  <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#C8102E', marginBottom: '12px' }}>
-                    {leader.role}
-                  </div>
-                  <p style={{ fontSize: '0.8rem', color: '#657380', lineHeight: 1.45, marginBottom: '18px', flex: 1 }}>
-                    {leader.bio}
+                  <p style={{ fontSize: '0.88rem', color: '#4A5568', lineHeight: 1.6, margin: 0 }}>
+                    {step.desc}
                   </p>
-
-                  {/* LinkedIn Icon Button */}
-                  <div style={{ marginTop: 'auto' }}>
-                    <a
-                      href={leader.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: '28px',
-                        height: '28px',
-                        borderRadius: '4px',
-                        border: '1px solid #C8102E',
-                        color: '#C8102E',
-                        fontSize: '0.72rem',
-                        fontWeight: 800,
-                        textDecoration: 'none'
-                      }}
-                    >
-                      in
-                    </a>
-                  </div>
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </div>
 
-      {/* 4. Our Journey Timeline */}
-      <div className="container" style={{ padding: '72px 24px' }}>
-        <div style={{ fontSize: '0.82rem', fontWeight: 800, letterSpacing: '1.5px', color: '#C8102E', textTransform: 'uppercase', marginBottom: '8px' }}>
-          — OUR JOURNEY
-        </div>
-        <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#1E252B', marginBottom: '36px' }}>
-          A Legacy of Growth and Trust
-        </h2>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '16px' }}>
-          {timelineSteps.map((step, idx) => (
-            <div
-              key={idx}
-              style={{
-                backgroundColor: '#FFFFFF',
-                borderRadius: '10px',
-                border: '1px solid #E2E8F0',
-                overflow: 'hidden',
-                boxShadow: '0 4px 14px rgba(0,0,0,0.03)',
-                display: 'flex',
-                flexDirection: 'column'
-              }}
-            >
-              <div style={{ padding: '14px 14px 0' }}>
-                <div style={{ fontSize: '1.1rem', fontWeight: 900, color: '#C8102E', marginBottom: '2px' }}>
-                  {step.year}
-                </div>
-                <h4 style={{ fontSize: '0.85rem', fontWeight: 800, color: '#1E252B', marginBottom: '6px' }}>
-                  {step.title}
-                </h4>
-                <p style={{ fontSize: '0.74rem', color: '#657380', lineHeight: 1.35, minHeight: '60px' }}>
-                  {step.desc}
-                </p>
-              </div>
-              <div style={{ height: '90px', marginTop: '12px' }}>
-                <img
-                  src={step.image}
-                  alt={step.title}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* 4. Leadership Team Section (Animated Org Tree) */}
+      <LeadershipTree />
 
       {/* 5. Our Values Section */}
       <div style={{ backgroundColor: '#FFFFFF', padding: '64px 0', borderTop: '1px solid #E5E9EC' }}>
