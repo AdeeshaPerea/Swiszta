@@ -22,12 +22,12 @@ export default function AboutSection({ onNavigate, onOpenVideo, onOpenQuote }) {
   ];
 
   const values = [
-    { title: 'Integrity', desc: 'We do the right thing, always.', icon: <ShieldCheck size={20} style={{ color: '#C8102E' }} /> },
-    { title: 'Excellence', desc: 'We strive for the highest standards.', icon: <Star size={20} style={{ color: '#C8102E' }} /> },
-    { title: 'Teamwork', desc: 'We collaborate and deliver results.', icon: <Users size={20} style={{ color: '#C8102E' }} /> },
-    { title: 'Collaboration', desc: 'We work together to create better outcomes.', icon: <Handshake size={20} style={{ color: '#C8102E' }} /> },
-    { title: 'Sustainability', desc: 'We care for our people, communities and planet.', icon: <Leaf size={20} style={{ color: '#C8102E' }} /> },
-    { title: 'Accountability', desc: 'We own our actions and deliver results.', icon: <UserCheck size={20} style={{ color: '#C8102E' }} /> }
+    { title: 'Integrity', desc: 'We do the right thing, always.', icon: <ShieldCheck size={20} style={{ color: '#FF2A4B' }} /> },
+    { title: 'Excellence', desc: 'We strive for the highest standards.', icon: <Star size={20} style={{ color: '#FF2A4B' }} /> },
+    { title: 'Teamwork', desc: 'We collaborate and deliver results.', icon: <Users size={20} style={{ color: '#FF2A4B' }} /> },
+    { title: 'Collaboration', desc: 'We work together to create better outcomes.', icon: <Handshake size={20} style={{ color: '#FF2A4B' }} /> },
+    { title: 'Sustainability', desc: 'We care for our people, communities and planet.', icon: <Leaf size={20} style={{ color: '#FF2A4B' }} /> },
+    { title: 'Accountability', desc: 'We own our actions and deliver results.', icon: <UserCheck size={20} style={{ color: '#FF2A4B' }} /> }
   ];
 
   return (
@@ -328,27 +328,123 @@ export default function AboutSection({ onNavigate, onOpenVideo, onOpenQuote }) {
       {/* 3. OUR LEADERSHIP TEAM Section (Animated Org Tree) */}
       <LeadershipTree />
 
-      {/* 4. OUR VALUES Section */}
-      <div style={{ backgroundColor: '#FFFFFF', padding: '64px 0', borderTop: '1px solid #E5E9EC' }}>
-        <div className="container">
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '32px' }}>
+      {/* 4. OUR VALUES Section (Redesigned Rich Dark Layout with 2-Line Heading & Image) */}
+      <div style={{ backgroundColor: '#0B0F17', color: '#FFFFFF', padding: '56px 0', borderTop: '2px solid rgba(255, 42, 75, 0.4)', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', position: 'relative', overflow: 'hidden' }}>
+        
+        {/* Subtle Ambient Red Glow */}
+        <div style={{ position: 'absolute', top: '-80px', right: '-80px', width: '360px', height: '360px', background: 'radial-gradient(circle, rgba(200, 16, 46, 0.22) 0%, rgba(11,15,23,0) 70%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', bottom: '-80px', left: '-80px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(200, 16, 46, 0.15) 0%, rgba(11,15,23,0) 70%)', pointerEvents: 'none' }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          
+          {/* Main Grid: Left Image Banner, Right Values Grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.35fr', gap: '44px', alignItems: 'center' }}>
             
+            {/* Left Column: Featured Image with Overlay Cards */}
+            <div style={{ position: 'relative' }}>
+              <div style={{
+                position: 'relative',
+                borderRadius: '20px',
+                overflow: 'hidden',
+                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.6)',
+                border: '1px solid rgba(255, 255, 255, 0.15)'
+              }}>
+                <img 
+                  src="/images/swiszta_team.png" 
+                  alt="SWISZTA Leadership & Team Values" 
+                  style={{
+                    width: '100%',
+                    height: '460px',
+                    objectFit: 'cover',
+                    display: 'block'
+                  }}
+                  onError={(e) => { e.target.src = '/images/contact_hero.png'; }}
+                />
+                <div style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(11, 15, 23, 0.88) 0%, rgba(11, 15, 23, 0.2) 60%)'
+                }} />
+
+                {/* Floating Top Badge */}
+                <div style={{
+                  position: 'absolute',
+                  top: '20px',
+                  left: '20px',
+                  backgroundColor: 'rgba(11, 15, 23, 0.85)',
+                  backdropFilter: 'blur(8px)',
+                  border: '1px solid rgba(255, 42, 75, 0.4)',
+                  padding: '6px 16px',
+                  borderRadius: '20px',
+                  fontSize: '0.76rem',
+                  fontWeight: 800,
+                  color: '#FF2A4B',
+                  letterSpacing: '1px',
+                  textTransform: 'uppercase',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.5)'
+                }}>
+                  — OUR GUIDING PRINCIPLES
+                </div>
+
+                {/* Floating Bottom Card */}
+                <div style={{
+                  position: 'absolute',
+                  bottom: '20px',
+                  left: '20px',
+                  right: '20px',
+                  backgroundColor: 'rgba(22, 31, 48, 0.92)',
+                  backdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  borderRadius: '14px',
+                  padding: '16px 20px',
+                  boxShadow: '0 10px 25px rgba(0,0,0,0.4)'
+                }}>
+                  <div style={{ fontSize: '0.92rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '2px' }}>
+                    Excellence in Action
+                  </div>
+                  <div style={{ fontSize: '0.8rem', color: '#CBD5E0', fontWeight: 500 }}>
+                    Delivering trusted, high-standard hospitality solutions nationwide since 1992.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Values Header & 6-Cards Grid */}
             <div>
-              <div style={{ fontSize: '0.82rem', fontWeight: 800, letterSpacing: '1.5px', color: '#C8102E', textTransform: 'uppercase', marginBottom: '8px' }}>
+              <div style={{ fontSize: '0.82rem', fontWeight: 900, letterSpacing: '1.5px', color: '#FF2A4B', textTransform: 'uppercase', marginBottom: '6px' }}>
                 — OUR VALUES
               </div>
-              <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#1E252B', marginBottom: '24px' }}>
-                The Principles That Guide Everything We Do.
+
+              {/* 2-Line Heading */}
+              <h2 style={{ fontSize: '2.1rem', fontWeight: 900, color: '#FFFFFF', marginBottom: '12px', lineHeight: 1.25 }}>
+                The Principles That Guide <br />
+                <span style={{ color: '#FF2A4B' }}>Everything We Do.</span>
               </h2>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', maxWidth: '820px' }}>
+              <p style={{ fontSize: '0.9rem', color: '#CBD5E0', lineHeight: 1.5, marginBottom: '24px', fontWeight: 500 }}>
+                Our values reflect our commitment to service quality, client satisfaction, and fostering strong long-term partnerships across Australia.
+              </p>
+
+              {/* 6 Values Grid (2 columns x 3 rows) */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '24px' }}>
                 {values.map((v, i) => (
-                  <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <div key={i} style={{
+                    display: 'flex',
+                    gap: '14px',
+                    alignItems: 'flex-start',
+                    backgroundColor: '#161F30',
+                    border: '1px solid rgba(255, 255, 255, 0.12)',
+                    borderRadius: '14px',
+                    padding: '16px',
+                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.25)',
+                    transition: 'all 0.25s ease'
+                  }}>
                     <div style={{
-                      width: '38px',
-                      height: '38px',
+                      width: '42px',
+                      height: '42px',
                       borderRadius: '50%',
-                      backgroundColor: '#FFF0F2',
+                      backgroundColor: 'rgba(255, 42, 75, 0.15)',
+                      border: '1px solid rgba(255, 42, 75, 0.35)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -357,41 +453,59 @@ export default function AboutSection({ onNavigate, onOpenVideo, onOpenQuote }) {
                       {v.icon}
                     </div>
                     <div>
-                      <h4 style={{ fontSize: '0.9rem', fontWeight: 800, color: '#1E252B' }}>
+                      <h4 style={{ fontSize: '0.96rem', fontWeight: 800, color: '#FFFFFF', margin: '0 0 3px 0' }}>
                         {v.title}
                       </h4>
-                      <p style={{ fontSize: '0.78rem', color: '#657380', marginTop: '2px', lineHeight: 1.35 }}>
+                      <p style={{ fontSize: '0.82rem', color: '#CBD5E0', margin: 0, lineHeight: 1.4, fontWeight: 500 }}>
                         {v.desc}
                       </p>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
 
-            {/* Right CTA Box */}
-            <div style={{
-              backgroundColor: '#13181C',
-              color: '#FFFFFF',
-              borderRadius: '12px',
-              padding: '32px',
-              maxWidth: '320px',
-              textAlign: 'center',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.12)'
-            }}>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 800, lineHeight: 1.3, marginBottom: '12px', color: '#FFFFFF' }}>
-                Let's Build the Future of Hospitality Together
-              </h4>
-              <button 
-                onClick={onOpenQuote}
-                className="btn btn-red"
-                style={{ width: '100%', marginTop: '12px', padding: '12px' }}
-              >
-                GET IN TOUCH <ChevronRight size={16} />
-              </button>
+              {/* Bottom CTA Banner inside Values Column */}
+              <div style={{
+                background: 'linear-gradient(135deg, #1E293B 0%, #0F172A 100%)',
+                color: '#FFFFFF',
+                borderRadius: '14px',
+                border: '1px solid rgba(255, 42, 75, 0.3)',
+                padding: '18px 22px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '16px',
+                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.3)'
+              }}>
+                <div>
+                  <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#FFFFFF' }}>
+                    Build the Future of Hospitality Together
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: '#E2E8F0', marginTop: '2px', fontWeight: 500 }}>
+                    Partner with Australia's premier hospitality service providers.
+                  </div>
+                </div>
+
+                <button 
+                  onClick={onOpenQuote}
+                  className="btn btn-red"
+                  style={{
+                    padding: '10px 18px',
+                    fontSize: '0.82rem',
+                    fontWeight: 800,
+                    whiteSpace: 'nowrap',
+                    flexShrink: 0,
+                    boxShadow: '0 4px 14px rgba(200, 16, 46, 0.4)'
+                  }}
+                >
+                  GET IN TOUCH <ChevronRight size={15} />
+                </button>
+              </div>
+
             </div>
 
           </div>
+
         </div>
       </div>
 

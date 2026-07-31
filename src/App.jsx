@@ -5,6 +5,10 @@ import ServicesBar from './components/ServicesBar';
 import AboutSection from './components/AboutSection';
 import StatsAndClients from './components/StatsAndClients';
 import TestimonialQuote from './components/TestimonialQuote';
+import FeaturedServicesShowcase from './components/FeaturedServicesShowcase';
+import NationwideCoverage from './components/NationwideCoverage';
+import LatestNewsSection from './components/LatestNewsSection';
+import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
 
 import WatermarkOverlay from './components/WatermarkOverlay';
@@ -69,10 +73,23 @@ export default function App() {
               onOpenVideo={() => setIsVideoOpen(true)}
               onOpenQuote={() => setIsQuoteOpen(true)}
             />
+            <FeaturedServicesShowcase 
+              onNavigate={handleNavigate}
+              onOpenQuote={() => setIsQuoteOpen(true)}
+            />
+            <NationwideCoverage 
+              onOpenQuote={() => setIsQuoteOpen(true)}
+            />
             <StatsAndClients 
               onOpenClientsModal={() => setIsClientsOpen(true)} 
             />
+            <LatestNewsSection 
+              onNavigate={handleNavigate}
+            />
             <TestimonialQuote />
+            <FAQSection 
+              onOpenQuote={() => setIsQuoteOpen(true)}
+            />
           </>
         )}
 

@@ -160,29 +160,29 @@ export default function LeadershipTree() {
   };
 
   return (
-    <section id="leadership-section" style={{ backgroundColor: '#FFFFFF', padding: '36px 0 44px', borderBottom: '1px solid #E5E9EC', position: 'relative', overflow: 'hidden' }}>
+    <section id="leadership-section" style={{ backgroundColor: '#F8FAFC', padding: '32px 0 32px', borderBottom: '1px solid #E5E9EC', position: 'relative', overflow: 'hidden' }}>
       
       {/* Subtle Background Radial Glow */}
       <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', maxWidth: '1100px', height: '100%', pointerEvents: 'none', zIndex: 0 }}>
-        <div style={{ position: 'absolute', top: '15%', left: '8%', width: '320px', height: '320px', background: 'radial-gradient(circle, rgba(200, 16, 46, 0.03) 0%, rgba(255,255,255,0) 70%)', borderRadius: '50%' }} />
-        <div style={{ position: 'absolute', top: '45%', right: '8%', width: '320px', height: '320px', background: 'radial-gradient(circle, rgba(200, 16, 46, 0.025) 0%, rgba(255,255,255,0) 70%)', borderRadius: '50%' }} />
+        <div style={{ position: 'absolute', top: '15%', left: '8%', width: '320px', height: '320px', background: 'radial-gradient(circle, rgba(200, 16, 46, 0.035) 0%, rgba(255,255,255,0) 70%)', borderRadius: '50%' }} />
+        <div style={{ position: 'absolute', top: '45%', right: '8%', width: '320px', height: '320px', background: 'radial-gradient(circle, rgba(200, 16, 46, 0.03) 0%, rgba(255,255,255,0) 70%)', borderRadius: '50%' }} />
       </div>
 
       <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1100px' }}>
 
         {/* Section Header */}
-        <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 20px' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.78rem', fontWeight: 800, letterSpacing: '1.5px', color: '#1E252B', textTransform: 'uppercase', marginBottom: '6px' }}>
+        <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 16px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.78rem', fontWeight: 800, letterSpacing: '1.5px', color: '#1E252B', textTransform: 'uppercase', marginBottom: '4px' }}>
             <span style={{ width: '6px', height: '6px', backgroundColor: '#C8102E', transform: 'rotate(45deg)', display: 'inline-block' }}></span>
             OUR LEADERSHIP TEAM
             <span style={{ width: '6px', height: '6px', backgroundColor: '#C8102E', transform: 'rotate(45deg)', display: 'inline-block' }}></span>
           </div>
 
-          <h2 style={{ fontSize: '2.1rem', fontWeight: 800, color: '#1E252B', marginBottom: '6px', letterSpacing: '-0.5px' }}>
+          <h2 style={{ fontSize: '2.1rem', fontWeight: 800, color: '#1E252B', marginBottom: '4px', letterSpacing: '-0.5px' }}>
             Experienced Leaders. <span style={{ color: '#C8102E' }}>Exceptional Results.</span>
           </h2>
 
-          <p style={{ fontSize: '0.9rem', color: '#4A5568', lineHeight: 1.45, maxWidth: '660px', margin: '0 auto' }}>
+          <p style={{ fontSize: '0.88rem', color: '#4A5568', lineHeight: 1.4, maxWidth: '660px', margin: '0 auto' }}>
             Our executive leadership structure drives operational excellence, financial governance, and client retention nationwide.
           </p>
         </div>
@@ -202,9 +202,9 @@ export default function LeadershipTree() {
               onMouseLeave={() => setHoveredNodeId(null)}
               onClick={() => setSelectedLeader(ceo)}
               style={{
-                width: '285px',
+                width: '280px',
                 cursor: 'pointer',
-                padding: '18px 16px 20px',
+                padding: '16px 14px 16px',
                 textAlign: 'center',
                 position: 'relative',
                 borderRadius: '16px',
@@ -223,25 +223,25 @@ export default function LeadershipTree() {
                 fontSize: '0.66rem',
                 fontWeight: 900,
                 letterSpacing: '0.8px',
-                padding: '4px 12px',
+                padding: '3px 10px',
                 borderRadius: '12px',
                 textTransform: 'uppercase',
                 boxShadow: '0 2px 6px rgba(200, 16, 46, 0.25)',
-                marginBottom: '12px'
+                marginBottom: '10px'
               }}>
                 <Crown size={12} /> {ceo.tag}
               </div>
 
-              {/* CEO FACE HEADSHOT (140px × 140px) */}
+              {/* CEO FACE HEADSHOT (130px × 130px) */}
               <div style={{
-                margin: '0 auto 12px',
-                width: '140px',
-                height: '140px',
+                margin: '0 auto 10px',
+                width: '130px',
+                height: '130px',
                 borderRadius: '50%',
                 border: '3.5px solid #C8102E',
                 padding: '3px',
                 backgroundColor: '#FFFFFF',
-                boxShadow: '0 8px 20px rgba(200, 16, 46, 0.22)',
+                boxShadow: '0 6px 18px rgba(200, 16, 46, 0.2)',
                 overflow: 'hidden'
               }}>
                 <img
@@ -258,14 +258,14 @@ export default function LeadershipTree() {
                 />
               </div>
 
-              <h3 style={{ fontSize: '1.22rem', fontWeight: 800, color: '#1E252B', marginBottom: '2px' }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#1E252B', marginBottom: '2px' }}>
                 {ceo.name}
               </h3>
-              <div style={{ fontSize: '0.84rem', fontWeight: 800, color: '#C8102E', marginBottom: '8px' }}>
+              <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#C8102E', marginBottom: '6px' }}>
                 {ceo.displayRole}
               </div>
               
-              <p style={{ fontSize: '0.8rem', color: '#475569', lineHeight: 1.4, marginBottom: '10px', height: '48px', overflow: 'hidden' }}>
+              <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.38, marginBottom: '8px', minHeight: '36px' }}>
                 {ceo.bio}
               </p>
 
@@ -276,9 +276,9 @@ export default function LeadershipTree() {
           </div>
 
           {/* ------------------------------------------------------------- */}
-          {/* SVG CONNECTOR LINES: LEVEL 1 TO LEVEL 2 (36px height)         */}
+          {/* SVG CONNECTOR LINES: LEVEL 1 TO LEVEL 2 (24px height)         */}
           {/* ------------------------------------------------------------- */}
-          <div style={{ height: '36px', position: 'relative', width: '100%' }}>
+          <div style={{ height: '24px', position: 'relative', width: '100%' }}>
             <svg style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, overflow: 'visible' }}>
               <defs>
                 <linearGradient id="treeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -289,14 +289,14 @@ export default function LeadershipTree() {
 
               {/* Central line down from CEO */}
               <line 
-                x1="50%" y1="0" x2="50%" y2="18" 
+                x1="50%" y1="0" x2="50%" y2="12" 
                 stroke="#C8102E" 
                 strokeWidth={isLineActive('ceo', 'peter') || isLineActive('ceo', 'deshani') || isLineActive('ceo', 'robert') ? '3' : '2'} 
               />
 
               {/* Horizontal branch line covering 3 Level-2 nodes */}
               <line 
-                x1="16.66%" y1="18" x2="83.33%" y2="18" 
+                x1="16.66%" y1="12" x2="83.33%" y2="12" 
                 stroke="url(#treeGrad)" 
                 strokeWidth="2.5" 
                 strokeDasharray="5 5" 
@@ -305,34 +305,34 @@ export default function LeadershipTree() {
 
               {/* Drop lines to each Level 2 node */}
               <line 
-                x1="16.66%" y1="18" x2="16.66%" y2="36" 
+                x1="16.66%" y1="12" x2="16.66%" y2="24" 
                 stroke={isLineActive('ceo', 'peter') ? '#C8102E' : '#94A3B8'} 
                 strokeWidth={isLineActive('ceo', 'peter') ? '3' : '2'} 
               />
               <line 
-                x1="50%" y1="18" x2="50%" y2="36" 
+                x1="50%" y1="12" x2="50%" y2="24" 
                 stroke={isLineActive('ceo', 'deshani') ? '#C8102E' : '#C8102E'} 
                 strokeWidth={isLineActive('ceo', 'deshani') ? '3' : '2'} 
               />
               <line 
-                x1="83.33%" y1="18" x2="83.33%" y2="36" 
+                x1="83.33%" y1="12" x2="83.33%" y2="24" 
                 stroke={isLineActive('ceo', 'robert') ? '#C8102E' : '#94A3B8'} 
                 strokeWidth={isLineActive('ceo', 'robert') ? '3' : '2'} 
               />
 
               {/* Junction nodes */}
-              <circle cx="50%" cy="18" r="4" fill="#C8102E" />
-              <circle cx="16.66%" cy="18" r="3.5" fill={isLineActive('ceo', 'peter') ? '#C8102E' : '#94A3B8'} />
-              <circle cx="83.33%" cy="18" r="3.5" fill={isLineActive('ceo', 'robert') ? '#C8102E' : '#94A3B8'} />
+              <circle cx="50%" cy="12" r="4" fill="#C8102E" />
+              <circle cx="16.66%" cy="12" r="3.5" fill={isLineActive('ceo', 'peter') ? '#C8102E' : '#94A3B8'} />
+              <circle cx="83.33%" cy="12" r="3.5" fill={isLineActive('ceo', 'robert') ? '#C8102E' : '#94A3B8'} />
             </svg>
           </div>
 
           {/* ------------------------------------------------------------- */}
           {/* LEVEL 2: EXECUTIVE DIRECTORS ROW (PETER, DESHANI, ROBERT)    */}
           {/* ------------------------------------------------------------- */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px', position: 'relative' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', position: 'relative', alignItems: 'stretch' }}>
             {level2Leaders.map((leader, index) => (
-              <div key={leader.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div key={leader.id} style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                 <div
                   className={`tree-card tree-node-appear level-2-delay-${index}`}
                   onMouseEnter={() => setHoveredNodeId(leader.id)}
@@ -340,8 +340,9 @@ export default function LeadershipTree() {
                   onClick={() => setSelectedLeader(leader)}
                   style={{
                     width: '100%',
+                    height: '100%',
                     cursor: 'pointer',
-                    padding: '16px 14px 18px',
+                    padding: '14px 12px 14px',
                     textAlign: 'center',
                     position: 'relative',
                     borderRadius: '14px',
@@ -349,65 +350,68 @@ export default function LeadershipTree() {
                     border: leader.id === 'peter' ? '2px solid #C8102E' : '1px solid #E2E8F0',
                     boxShadow: hoveredNodeId === leader.id ? '0 12px 28px rgba(200, 16, 46, 0.16)' : '0 6px 16px rgba(0, 0, 0, 0.04)',
                     display: 'flex',
-                    flexDirection: 'column'
+                    flexDirection: 'column',
+                    justifyContent: 'space-between'
                   }}
                 >
-                  {/* Role Tag */}
-                  <div style={{
-                    display: 'inline-block',
-                    backgroundColor: leader.id === 'peter' ? '#FFF0F2' : '#F1F5F9',
-                    color: leader.id === 'peter' ? '#C8102E' : '#475569',
-                    fontSize: '0.64rem',
-                    fontWeight: 800,
-                    letterSpacing: '0.6px',
-                    padding: '3px 10px',
-                    borderRadius: '10px',
-                    marginBottom: '10px',
-                    textTransform: 'uppercase'
-                  }}>
-                    {leader.tag}
+                  <div>
+                    {/* Role Tag */}
+                    <div style={{
+                      display: 'inline-block',
+                      backgroundColor: leader.id === 'peter' ? '#FFF0F2' : '#F1F5F9',
+                      color: leader.id === 'peter' ? '#C8102E' : '#475569',
+                      fontSize: '0.62rem',
+                      fontWeight: 800,
+                      letterSpacing: '0.6px',
+                      padding: '3px 8px',
+                      borderRadius: '10px',
+                      marginBottom: '8px',
+                      textTransform: 'uppercase'
+                    }}>
+                      {leader.tag}
+                    </div>
+
+                    {/* LEVEL 2 FACE HEADSHOT (115px × 115px) */}
+                    <div style={{
+                      margin: '0 auto 8px',
+                      width: '115px',
+                      height: '115px',
+                      borderRadius: '50%',
+                      border: '3px solid #E2E8F0',
+                      backgroundColor: '#EDF2F7',
+                      boxShadow: '0 6px 16px rgba(0,0,0,0.08)',
+                      overflow: 'hidden'
+                    }}>
+                      <img
+                        src={leader.image}
+                        alt={leader.name}
+                        onError={(e) => { e.target.src = leader.fallbackImage; }}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          borderRadius: '50%',
+                          objectFit: 'cover',
+                          objectPosition: 'center 15%'
+                        }}
+                      />
+                    </div>
+
+                    <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1E252B', marginBottom: '2px' }}>
+                      {leader.name}
+                    </h3>
+                    <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#C8102E', marginBottom: '6px', minHeight: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      {leader.displayRole}
+                    </div>
+                    
+                    {/* Compact Bio */}
+                    <p style={{ fontSize: '0.76rem', color: '#475569', lineHeight: 1.38, marginBottom: '10px', minHeight: '44px' }}>
+                      {leader.bio}
+                    </p>
                   </div>
 
-                  {/* LEVEL 2 FACE HEADSHOT (125px × 125px) */}
-                  <div style={{
-                    margin: '0 auto 10px',
-                    width: '125px',
-                    height: '125px',
-                    borderRadius: '50%',
-                    border: '3px solid #E2E8F0',
-                    backgroundColor: '#EDF2F7',
-                    boxShadow: '0 6px 16px rgba(0,0,0,0.08)',
-                    overflow: 'hidden'
-                  }}>
-                    <img
-                      src={leader.image}
-                      alt={leader.name}
-                      onError={(e) => { e.target.src = leader.fallbackImage; }}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        borderRadius: '50%',
-                        objectFit: 'cover',
-                        objectPosition: 'center 15%'
-                      }}
-                    />
-                  </div>
-
-                  <h3 style={{ fontSize: '1.08rem', fontWeight: 800, color: '#1E252B', marginBottom: '2px' }}>
-                    {leader.name}
-                  </h3>
-                  <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#C8102E', marginBottom: '6px' }}>
-                    {leader.displayRole}
-                  </div>
-                  
-                  {/* Compact Bio */}
-                  <p style={{ fontSize: '0.78rem', color: '#475569', lineHeight: 1.4, marginBottom: '10px', flex: 1, height: '44px', overflow: 'hidden' }}>
-                    {leader.bio}
-                  </p>
-
-                  {/* If Peter Pitchers, show Expand/Collapse sub-tree button */}
-                  {leader.hasChildren && (
-                    <div style={{ marginTop: 'auto' }}>
+                  {/* Equal Height Bottom Action Element for All Cards */}
+                  <div style={{ marginTop: 'auto', paddingTop: '4px' }}>
+                    {leader.hasChildren ? (
                       <div
                         onClick={(e) => {
                           e.stopPropagation();
@@ -418,11 +422,11 @@ export default function LeadershipTree() {
                           display: 'inline-flex',
                           alignItems: 'center',
                           gap: '4px',
-                          fontSize: '0.72rem',
+                          fontSize: '0.7rem',
                           fontWeight: 800,
                           backgroundColor: '#FFF0F2',
                           color: '#C8102E',
-                          padding: '5px 12px',
+                          padding: '4px 10px',
                           borderRadius: '14px',
                           cursor: 'pointer',
                           boxShadow: '0 2px 6px rgba(200, 16, 46, 0.12)'
@@ -434,30 +438,48 @@ export default function LeadershipTree() {
                           <><span>Expand Direct Reports</span> <ChevronDown size={13} /></>
                         )}
                       </div>
-                    </div>
-                  )}
+                    ) : (
+                      <div
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          fontSize: '0.7rem',
+                          fontWeight: 800,
+                          backgroundColor: '#F8FAFC',
+                          color: '#475569',
+                          padding: '4px 10px',
+                          borderRadius: '14px',
+                          border: '1px solid #E2E8F0'
+                        }}
+                      >
+                        <span>Executive Profile</span> <ExternalLink size={12} />
+                      </div>
+                    )}
+                  </div>
+
                 </div>
               </div>
             ))}
           </div>
 
           {/* ------------------------------------------------------------- */}
-          {/* SVG CONNECTOR LINES: LEVEL 2 (PETER) TO LEVEL 3 (36px)        */}
+          {/* SVG CONNECTOR LINES: LEVEL 2 (PETER) TO LEVEL 3 (24px)        */}
           {/* ------------------------------------------------------------- */}
           {isPeterExpanded && (
             <>
-              <div style={{ height: '36px', position: 'relative', width: '100%' }}>
+              <div style={{ height: '24px', position: 'relative', width: '100%' }}>
                 <svg style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, overflow: 'visible' }}>
                   {/* Stem from Peter Pitchers (located at 16.66% horizontal center) */}
                   <line 
-                    x1="16.66%" y1="0" x2="16.66%" y2="18" 
+                    x1="16.66%" y1="0" x2="16.66%" y2="12" 
                     stroke="#C8102E" 
                     strokeWidth="2.5" 
                   />
 
                   {/* Sub-branch horizontal line spreading to 3 sub-reports under Peter */}
                   <line 
-                    x1="16.66%" y1="18" x2="83.33%" y2="18" 
+                    x1="16.66%" y1="12" x2="83.33%" y2="12" 
                     stroke="#C8102E" 
                     strokeWidth="2.5" 
                     strokeDasharray="5 5" 
@@ -466,24 +488,24 @@ export default function LeadershipTree() {
 
                   {/* Drop lines to Level 3 nodes */}
                   <line 
-                    x1="16.66%" y1="18" x2="16.66%" y2="36" 
+                    x1="16.66%" y1="12" x2="16.66%" y2="24" 
                     stroke={isLineActive('peter', 'markus') ? '#C8102E' : '#C8102E'} 
                     strokeWidth={hoveredNodeId === 'markus' ? '3' : '2'} 
                   />
                   <line 
-                    x1="50%" y1="18" x2="50%" y2="36" 
+                    x1="50%" y1="12" x2="50%" y2="24" 
                     stroke={isLineActive('peter', 'danny') ? '#C8102E' : '#C8102E'} 
                     strokeWidth={hoveredNodeId === 'danny' ? '3' : '2'} 
                   />
                   <line 
-                    x1="83.33%" y1="18" x2="83.33%" y2="36" 
+                    x1="83.33%" y1="12" x2="83.33%" y2="24" 
                     stroke={isLineActive('peter', 'vivien') ? '#C8102E' : '#C8102E'} 
                     strokeWidth={hoveredNodeId === 'vivien' ? '3' : '2'} 
                   />
 
-                  <circle cx="16.66%" cy="18" r="4" fill="#C8102E" />
-                  <circle cx="50%" cy="18" r="3.5" fill="#C8102E" />
-                  <circle cx="83.33%" cy="18" r="3.5" fill="#C8102E" />
+                  <circle cx="16.66%" cy="12" r="4" fill="#C8102E" />
+                  <circle cx="50%" cy="12" r="3.5" fill="#C8102E" />
+                  <circle cx="83.33%" cy="12" r="3.5" fill="#C8102E" />
                 </svg>
               </div>
 
@@ -493,13 +515,14 @@ export default function LeadershipTree() {
               <div style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: '18px',
-                backgroundColor: '#FAFBFD',
-                padding: '16px 18px',
+                gap: '16px',
+                backgroundColor: '#FFFFFF',
+                padding: '14px 16px',
                 borderRadius: '16px',
-                border: '1px dashed #CBD5E0'
+                border: '1px dashed #CBD5E0',
+                boxShadow: '0 4px 14px rgba(0,0,0,0.03)'
               }}>
-                <div style={{ gridColumn: '1 / -1', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.72rem', fontWeight: 800, color: '#475569', letterSpacing: '0.8px', textTransform: 'uppercase', marginBottom: '-4px' }}>
+                <div style={{ gridColumn: '1 / -1', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.7rem', fontWeight: 800, color: '#475569', letterSpacing: '0.8px', textTransform: 'uppercase', marginBottom: '-4px' }}>
                   <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#C8102E' }}></span>
                   MANAGEMENT &amp; OPERATIONS DIVISION (REPORTING TO GENERAL MANAGER PETER)
                 </div>
@@ -513,12 +536,12 @@ export default function LeadershipTree() {
                     onClick={() => setSelectedLeader(leader)}
                     style={{
                       cursor: 'pointer',
-                      padding: '14px 12px 14px',
+                      padding: '12px 10px 12px',
                       textAlign: 'center',
-                      backgroundColor: '#FFFFFF',
+                      backgroundColor: '#FAFAFA',
                       borderRadius: '12px',
                       border: '1px solid #E2E8F0',
-                      boxShadow: hoveredNodeId === leader.id ? '0 12px 28px rgba(200, 16, 46, 0.16)' : '0 6px 16px rgba(0, 0, 0, 0.04)',
+                      boxShadow: hoveredNodeId === leader.id ? '0 12px 28px rgba(200, 16, 46, 0.16)' : '0 4px 12px rgba(0, 0, 0, 0.03)',
                       display: 'flex',
                       flexDirection: 'column'
                     }}
@@ -527,22 +550,22 @@ export default function LeadershipTree() {
                       display: 'inline-block',
                       backgroundColor: '#F8FAFC',
                       color: '#475569',
-                      fontSize: '0.62rem',
+                      fontSize: '0.6rem',
                       fontWeight: 800,
                       letterSpacing: '0.5px',
-                      padding: '3px 8px',
+                      padding: '2px 6px',
                       borderRadius: '8px',
-                      marginBottom: '8px',
+                      marginBottom: '6px',
                       textTransform: 'uppercase'
                     }}>
                       {leader.tag}
                     </div>
 
-                    {/* LEVEL 3 FACE HEADSHOT (110px × 110px) */}
+                    {/* LEVEL 3 FACE HEADSHOT (100px × 100px) */}
                     <div style={{
-                      margin: '0 auto 8px',
-                      width: '110px',
-                      height: '110px',
+                      margin: '0 auto 6px',
+                      width: '100px',
+                      height: '100px',
                       borderRadius: '50%',
                       border: '3px solid #E2E8F0',
                       backgroundColor: '#EDF2F7',
@@ -564,14 +587,14 @@ export default function LeadershipTree() {
                     </div>
 
                     {/* Body Content */}
-                    <h4 style={{ fontSize: '1.02rem', fontWeight: 800, color: '#1E252B', marginBottom: '2px' }}>
+                    <h4 style={{ fontSize: '0.98rem', fontWeight: 800, color: '#1E252B', marginBottom: '2px' }}>
                       {leader.name}
                     </h4>
-                    <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#C8102E', marginBottom: '6px' }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#C8102E', marginBottom: '4px' }}>
                       {leader.displayRole}
                     </div>
                     
-                    <p style={{ fontSize: '0.76rem', color: '#475569', lineHeight: 1.38, margin: 0, flex: 1, height: '40px', overflow: 'hidden' }}>
+                    <p style={{ fontSize: '0.74rem', color: '#475569', lineHeight: 1.35, margin: 0, flex: 1, minHeight: '32px' }}>
                       {leader.bio}
                     </p>
                   </div>
@@ -579,6 +602,19 @@ export default function LeadershipTree() {
               </div>
             </>
           )}
+
+          {/* Bottom Leadership Summary Banner */}
+          <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '20px', backgroundColor: '#FFFFFF', border: '1px solid #E2E8F0', fontSize: '0.76rem', fontWeight: 700, color: '#334155', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+              <Crown size={13} style={{ color: '#C8102E' }} /> Executive &amp; Operational Governance
+            </div>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '20px', backgroundColor: '#FFFFFF', border: '1px solid #E2E8F0', fontSize: '0.76rem', fontWeight: 700, color: '#334155', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+              <Building2 size={13} style={{ color: '#C8102E' }} /> Nationwide Property Service Leadership
+            </div>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '20px', backgroundColor: '#FFFFFF', border: '1px solid #E2E8F0', fontSize: '0.76rem', fontWeight: 700, color: '#334155', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+              <ShieldCheck size={13} style={{ color: '#C8102E' }} /> 98% Client Retention Driven by Leadership
+            </div>
+          </div>
 
         </div>
 
